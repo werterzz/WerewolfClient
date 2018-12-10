@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Recognition;
 using EventEnum = WerewolfClient.WerewolfModel.EventEnum;
 using CommandEnum = WerewolfClient.WerewolfCommand.CommandEnum;
 using WerewolfAPI.Model;
@@ -26,6 +27,7 @@ namespace WerewolfClient
         private string _myRole;
         private bool _isDead;
         private List<Player> players = null;
+        SpeechRecognitionEngine recEngine = new SpeechRecognitionEngine();
         public MainForm()
         {
             InitializeComponent();
@@ -398,6 +400,62 @@ namespace WerewolfClient
                 TbChatInput.Text = "";
                 controller.ActionPerformed(wcmd);
             }
+        }
+
+        private void buttonVoice_Click(object sender, EventArgs e)
+        {
+            recEngine.RecognizeAsync(RecognizeMode.Multiple);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Choices commands = new Choices();
+
+            commands.Add(new string[] { "say hello", "print my name", "kill wolf" });
+
+            GrammarBuilder gBuilder = new GrammarBuilder();
+
+            gBuilder.Append(commands);
+
+            Grammar grammar = new Grammar(gBuilder);
+
+
+
+            recEngine.LoadGrammarAsync(grammar);
+
+            recEngine.SetInputToDefaultAudioDevice();
+
+            recEngine.SpeechRecognized += recEngine_SpeechRecognized;
+        }
+
+        private void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+
+        {
+
+            switch (e.Result.Text)
+
+            {
+
+                case "say hello":
+
+                    MessageBox.Show("hello Top");
+
+                    break;
+
+                case "print my name":
+
+                    ;
+
+                    break;
+
+                case "kill wolf":
+
+                    
+
+                    break;
+
+            }
+
         }
     }
 }
