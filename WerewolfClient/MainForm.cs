@@ -24,6 +24,8 @@ namespace WerewolfClient
         private int _currentTime;
         private bool _voteActivated;
         private bool _actionActivated;
+        private bool _voiceChatActivated; // used for voice chat to people checking
+        private string _role_voiceChat; //used for keep role from user voice
         private string _myRole;
         private bool _isDead;
         private List<Player> players = null;
@@ -41,6 +43,7 @@ namespace WerewolfClient
             _updateTimer = new Timer();
             _voteActivated = false;
             _actionActivated = false;
+            _voiceChatActivated = false;
             EnableButton(BtnJoin, true);
             EnableButton(BtnAction, false);
             EnableButton(BtnVote, false);
@@ -428,7 +431,7 @@ namespace WerewolfClient
 
             commands.Add(new string[] { "say hello", "print my name", "kill", "vote",
             "player0", "player1", "player2", "player3", "player4" , "player5", "player6", "player7", "player8", "player9",
-            "player10", "player11", "player12", "player13", "player14", "player15"});
+            "player10", "player11", "player12", "player13", "player14", "player15", "I am wolf", "I am villager", "wolf is "});
 
             GrammarBuilder gBuilder = new GrammarBuilder();
 
@@ -466,10 +469,20 @@ namespace WerewolfClient
 
                     break;
 
-                case "print my name":
-
-                    ;
-
+                case "I am wolf":
+                    wcmd.Action = CommandEnum.Chat;
+                    wcmd.Payloads = new Dictionary<string, string>() { { "Message", "I am wolf" } };
+                    controller.ActionPerformed(wcmd);
+                    break;
+                case "I am villager":
+                    wcmd.Action = CommandEnum.Chat;
+                    wcmd.Payloads = new Dictionary<string, string>() { { "Message", "I am villager" } };
+                    controller.ActionPerformed(wcmd);
+                    break;
+                case "wolf is":
+                    AddChatMessage("And you say which player you think. ex: you can say 'player2' ");
+                    _role_voiceChat = "wolf";
+                    _voiceChatActivated = true;
                     break;
                 case "kill":
                     _voteActivated = false;
@@ -481,96 +494,133 @@ namespace WerewolfClient
                     _actionActivated = false;
                     AddChatMessage("which player you want to vote ? 1-15 from top ex: you can say 'player11' ");
                     break;
+                case "player0":
+                    IThink_voiceChat(_role_voiceChat, 0);
+                    voteAndActionForVoiceChat(0);
+                    _voteActivated = false;
+                    _actionActivated = false;
+                    _voiceChatActivated = false;
 
+                    break;
                 case "player1":
+                    IThink_voiceChat(_role_voiceChat, 1);
                     voteAndActionForVoiceChat(1);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player2":
+                    IThink_voiceChat(_role_voiceChat, 2);
                     voteAndActionForVoiceChat(2);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player3":
+                    IThink_voiceChat(_role_voiceChat, 3);
                     voteAndActionForVoiceChat(3);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
 
                 case "player4":
+                    IThink_voiceChat(_role_voiceChat, 4);
                     voteAndActionForVoiceChat(4);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player5":
+                    IThink_voiceChat(_role_voiceChat, 5);
                     voteAndActionForVoiceChat(5);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player6":
+                    IThink_voiceChat(_role_voiceChat, 6);
                     voteAndActionForVoiceChat(6);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player7":
+                    IThink_voiceChat(_role_voiceChat, 7);
                     voteAndActionForVoiceChat(7);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player8":
+                    IThink_voiceChat(_role_voiceChat, 8);
                     voteAndActionForVoiceChat(8);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player9":
+                    IThink_voiceChat(_role_voiceChat, 9);
                     voteAndActionForVoiceChat(9);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player10":
+                    IThink_voiceChat(_role_voiceChat, 10);
                     voteAndActionForVoiceChat(10);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player11":
+                    IThink_voiceChat(_role_voiceChat, 11);
                     voteAndActionForVoiceChat(11);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player12":
+                    IThink_voiceChat(_role_voiceChat, 12);
                     voteAndActionForVoiceChat(12);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player13":
+                    IThink_voiceChat(_role_voiceChat, 13);
                     voteAndActionForVoiceChat(13);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player14":
+                    IThink_voiceChat(_role_voiceChat, 14);
                     voteAndActionForVoiceChat(14);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
                 case "player15":
+                    IThink_voiceChat(_role_voiceChat, 15);
                     voteAndActionForVoiceChat(15);
                     _voteActivated = false;
                     _actionActivated = false;
+                    _voiceChatActivated = false;
 
                     break;
 
@@ -619,6 +669,30 @@ namespace WerewolfClient
                 }
 
             }
+
+        }
+        /// <summary>
+        /// Use of chat on voice chat and it are used in recEngine_SpeechRecognized()
+        /// </summary>
+        /// <param name="role">role of who you think that</param>
+        /// <param name="i">player</param>
+        private void IThink_voiceChat(string role, int i)
+        {
+            if(_voiceChatActivated)
+            {
+                try
+                {
+                    WerewolfCommand wcmd = new WerewolfCommand();
+                    wcmd.Action = CommandEnum.Chat;
+                    wcmd.Payloads = new Dictionary<string, string>() { { "Message", "I think " + players[i].Name + " is " + role} };
+                    controller.ActionPerformed(wcmd);
+                }
+                catch(Exception ex)
+                {
+                    AddChatMessage("You can't think on player" + i);
+                }
+            }
+
         }
     }
 }
