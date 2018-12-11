@@ -140,6 +140,7 @@
     <Content Include="Resources\Icon_head_hunter.png" />
     <Content Include="Resources\Icon_jailer.png" />
     <Content Include="Resources\Icon_medium.png" />
+    <Content Include="Resources\Icon_monkey.png" />
     <Content Include="Resources\Icon_priest.png" />
     <Content Include="Resources\Icon_seer.png" />
     <Content Include="Resources\Icon_serial_killer.png" />
