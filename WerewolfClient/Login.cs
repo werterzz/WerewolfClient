@@ -77,5 +77,16 @@ namespace WerewolfClient
         {
 
         }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                WerewolfCommand wcmd = new WerewolfCommand();
+                wcmd.Action = WerewolfCommand.CommandEnum.SignIn;
+                wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text }, { "Password", TbPassword.Text }, { "Server", TBServer.Text } };
+                controller.ActionPerformed(wcmd);
+            }
+        }
     }
 }
