@@ -162,6 +162,8 @@ namespace WerewolfClient
                         break;
                     case EventEnum.GameStopped:
                         AddChatMessage("Game is finished, outcome is " + wm.EventPayloads["Game.Outcome"]);
+                        Win wn = new Win(wm.EventPayloads["Game.Outcome"]);
+                        wn.Show();
                         _updateTimer.Enabled = false;
                         break;
                     case EventEnum.GameStarted:
@@ -215,11 +217,13 @@ namespace WerewolfClient
                         AddChatMessage("Switch to day time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Day;
                         LBPeriod.Text = "Day time of";
+                        this.BackgroundImage = Properties.Resources.Daytime;
                         break;
                     case EventEnum.SwitchToNightTime:
                         AddChatMessage("Switch to night time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Night;
                         LBPeriod.Text = "Night time of";
+                        this.BackgroundImage = Properties.Resources.Nighttime;
                         break;
                     case EventEnum.UpdateDay:
                         // TODO  catch parse exception here

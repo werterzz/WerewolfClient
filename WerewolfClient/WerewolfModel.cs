@@ -365,6 +365,7 @@ namespace WerewolfClient
         }
         public void SignIn(string server, string login, string password)
         {
+            
             try
             {
                 InitilizeModel(server);
@@ -391,7 +392,7 @@ namespace WerewolfClient
                 _player = playerEP.AddPlayer(p);
 
                 Console.WriteLine(_player.Id);
-                _event = EventEnum.SignIn;
+                _event = EventEnum.SignUp;
                 _eventPayloads["Success"] = TRUE;
             } catch (Exception ex)
             {

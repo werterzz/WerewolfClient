@@ -14,10 +14,12 @@ namespace WerewolfClient
     {
         private WerewolfController controller;
         private Form _mainForm;
-        public Login(Form MainForm)
+        
+        public Login(Form MainForm )
         {
             InitializeComponent();
             _mainForm = MainForm;
+           
         }
 
         public void Notify(Model m)
@@ -30,8 +32,12 @@ namespace WerewolfClient
                     case WerewolfModel.EventEnum.SignIn:
                         if (wm.EventPayloads["Success"] == "True")
                         {
-                            _mainForm.Visible = true;
                             this.Visible = false;
+                            Menu mMenu = new Menu(_mainForm);
+                            if (_mainForm.Visible == false)
+                            {
+                                mMenu.Show();
+                            }
                         }
                         else
                         {
@@ -65,12 +71,21 @@ namespace WerewolfClient
             controller.ActionPerformed(wcmd);
         }
 
-        private void BtnSignUp_Click(object sender, EventArgs e)
+        /*private void BtnSignUp_Click(object sender, EventArgs e)
         {
             WerewolfCommand wcmd = new WerewolfCommand();
             wcmd.Action = WerewolfCommand.CommandEnum.SignUp;
             wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text}, { "Password",TbPassword.Text}, { "Server", TBServer.Text } };
             controller.ActionPerformed(wcmd);
+        }*/
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            register frm = new register(this);
+            frm.Show();
         }
+
+       
     }
 }
