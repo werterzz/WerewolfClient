@@ -47,6 +47,7 @@
             this.BtnPlayer1 = new System.Windows.Forms.Button();
             this.BtnPlayer0 = new System.Windows.Forms.Button();
             this.GBChat = new System.Windows.Forms.GroupBox();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.button1 = new System.Windows.Forms.Button();
             this.TbChatInput = new System.Windows.Forms.TextBox();
             this.TbChatBox = new System.Windows.Forms.TextBox();
@@ -62,6 +63,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.GBPlayers.SuspendLayout();
             this.GBChat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.GBAction.SuspendLayout();
             this.GBStatus.SuspendLayout();
             this.SuspendLayout();
@@ -319,6 +321,7 @@
             // 
             // GBChat
             // 
+            this.GBChat.Controls.Add(this.axWindowsMediaPlayer1);
             this.GBChat.Controls.Add(this.button1);
             this.GBChat.Controls.Add(this.TbChatInput);
             this.GBChat.Controls.Add(this.TbChatBox);
@@ -330,6 +333,15 @@
             this.GBChat.TabIndex = 2;
             this.GBChat.TabStop = false;
             this.GBChat.Text = "Chat";
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(338, 276);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
+            this.axWindowsMediaPlayer1.TabIndex = 3;
             // 
             // button1
             // 
@@ -354,7 +366,7 @@
             // TbChatBox
             // 
             this.TbChatBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbChatBox.Location = new System.Drawing.Point(20, 23);
+            this.TbChatBox.Location = new System.Drawing.Point(29, 24);
             this.TbChatBox.Margin = new System.Windows.Forms.Padding(4);
             this.TbChatBox.Multiline = true;
             this.TbChatBox.Name = "TbChatBox";
@@ -492,6 +504,7 @@
             this.GBPlayers.ResumeLayout(false);
             this.GBChat.ResumeLayout(false);
             this.GBChat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.GBAction.ResumeLayout(false);
             this.GBStatus.ResumeLayout(false);
             this.GBStatus.PerformLayout();
@@ -532,6 +545,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnAction;
         private System.Windows.Forms.Button button1;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
 

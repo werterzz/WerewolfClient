@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Speech.Recognition; // use for voice chat you must to reference this before you can watch how to do this on youtube
+using WMPLib; //used for background sound
 using EventEnum = WerewolfClient.WerewolfModel.EventEnum;
 using CommandEnum = WerewolfClient.WerewolfCommand.CommandEnum;
 using WerewolfAPI.Model;
@@ -30,10 +31,11 @@ namespace WerewolfClient
         private bool _isDead;
         private List<Player> players = null;
         SpeechRecognitionEngine recEngine = new SpeechRecognitionEngine();
+        WindowsMediaPlayer backGround_sound = new WindowsMediaPlayer();
         public MainForm()
         {
             InitializeComponent();
-
+            backGround_sound.URL = "Fantasy_Game_Background_Looping.mp3";
             foreach (int i in Enumerable.Range(0, 16))
             {
                 this.Controls["GBPlayers"].Controls["BtnPlayer" + i].Click += new System.EventHandler(this.BtnPlayerX_Click);
@@ -411,11 +413,13 @@ namespace WerewolfClient
             {
                 recEngine.RecognizeAsync(RecognizeMode.Multiple);
                 AddChatMessage("Now, Voice chat is on !!!");
+                backGround_sound.controls.pause();
             }
             catch (Exception ex)
             {
                 recEngine.RecognizeAsyncStop();
                 AddChatMessage("Now, Voice chat is off !!!");
+                backGround_sound.controls.play();
             }
 
 
@@ -427,6 +431,7 @@ namespace WerewolfClient
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
+            backGround_sound.controls.play();
             Choices commands = new Choices();
 
             commands.Add(new string[] { "say hello", "print my name", "kill", "vote",
@@ -694,5 +699,7 @@ namespace WerewolfClient
             }
 
         }
+
+
     }
 }
