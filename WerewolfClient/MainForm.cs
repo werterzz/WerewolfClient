@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Speech.Recognition;
+using System.Speech.Recognition; // use for voice chat you must to reference this before you can watch how to do this on youtube
 using EventEnum = WerewolfClient.WerewolfModel.EventEnum;
 using CommandEnum = WerewolfClient.WerewolfCommand.CommandEnum;
 using WerewolfAPI.Model;
@@ -404,14 +404,31 @@ namespace WerewolfClient
 
         private void buttonVoice_Click(object sender, EventArgs e)
         {
-            recEngine.RecognizeAsync(RecognizeMode.Multiple);
-        }
+            try
+            {
+                recEngine.RecognizeAsync(RecognizeMode.Multiple);
+                AddChatMessage("Now, Voice chat is on !!!");
+            }
+            catch (Exception ex)
+            {
+                recEngine.RecognizeAsyncStop();
+                AddChatMessage("Now, Voice chat is off !!!");
+            }
 
+
+        }
+        /// <summary>
+        /// build for Embedding voice chat are used in MainForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
             Choices commands = new Choices();
 
-            commands.Add(new string[] { "say hello", "print my name", "kill wolf" });
+            commands.Add(new string[] { "say hello", "print my name", "kill", "vote",
+            "player0", "player1", "player2", "player3", "player4" , "player5", "player6", "player7", "player8", "player9",
+            "player10", "player11", "player12", "player13", "player14", "player15"});
 
             GrammarBuilder gBuilder = new GrammarBuilder();
 
@@ -427,11 +444,15 @@ namespace WerewolfClient
 
             recEngine.SpeechRecognized += recEngine_SpeechRecognized;
         }
-
+        /// <summary>
+        /// voice chat command are used in voice button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
 
         {
-
+            WerewolfCommand wcmd = new WerewolfCommand();
             switch (e.Result.Text)
 
             {
@@ -439,6 +460,9 @@ namespace WerewolfClient
                 case "say hello":
 
                     MessageBox.Show("hello Top");
+                    wcmd.Action = CommandEnum.Chat;
+                    wcmd.Payloads = new Dictionary<string, string>() { { "Message", "say hello" } };
+                    controller.ActionPerformed(wcmd);
 
                     break;
 
@@ -447,15 +471,154 @@ namespace WerewolfClient
                     ;
 
                     break;
+                case "kill":
+                    _voteActivated = false;
+                    _actionActivated = true;
+                    AddChatMessage("which player you want to kill ? 0-15 from top ex: you can say 'player11' ");
+                    break;
+                case "vote":
+                    _voteActivated = true;
+                    _actionActivated = false;
+                    AddChatMessage("which player you want to vote ? 1-15 from top ex: you can say 'player11' ");
+                    break;
 
-                case "kill wolf":
+                case "player1":
+                    voteAndActionForVoiceChat(1);
+                    _voteActivated = false;
+                    _actionActivated = false;
 
-                    
+                    break;
+                case "player2":
+                    voteAndActionForVoiceChat(2);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player3":
+                    voteAndActionForVoiceChat(3);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+
+                case "player4":
+                    voteAndActionForVoiceChat(4);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player5":
+                    voteAndActionForVoiceChat(5);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player6":
+                    voteAndActionForVoiceChat(6);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player7":
+                    voteAndActionForVoiceChat(7);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player8":
+                    voteAndActionForVoiceChat(8);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player9":
+                    voteAndActionForVoiceChat(9);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player10":
+                    voteAndActionForVoiceChat(10);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player11":
+                    voteAndActionForVoiceChat(11);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player12":
+                    voteAndActionForVoiceChat(12);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player13":
+                    voteAndActionForVoiceChat(13);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player14":
+                    voteAndActionForVoiceChat(14);
+                    _voteActivated = false;
+                    _actionActivated = false;
+
+                    break;
+                case "player15":
+                    voteAndActionForVoiceChat(15);
+                    _voteActivated = false;
+                    _actionActivated = false;
 
                     break;
 
             }
 
+        }
+        /// <summary>
+        /// use for select to vote or action player on recEngine_SpeechRecognized()
+        /// </summary>
+        /// <param name="i">number of player 0-15 </param>
+        private void voteAndActionForVoiceChat(int i)
+        {
+            WerewolfCommand wcmd = new WerewolfCommand();
+            int index = (int)Controls["GBPlayers"].Controls["BtnPlayer" + i].Tag;
+            if (_actionActivated)
+            {
+                try
+                {
+                    _actionActivated = false;
+                    BtnAction.BackColor = Button.DefaultBackColor;
+                    AddChatMessage("You perform [" + BtnAction.Text + "] on " + players[index].Name);
+                    wcmd.Action = CommandEnum.Action;
+                    wcmd.Payloads = new Dictionary<string, string>() { { "Target", players[index].Id.ToString() } };
+                    controller.ActionPerformed(wcmd);
+                }
+                catch(Exception ex)
+                {
+                    AddChatMessage("You can't kill on player" + i);
+                }
+
+            }
+            if (_voteActivated)
+            {
+                _voteActivated = false;
+                BtnVote.BackColor = Button.DefaultBackColor;
+                try
+                {
+                    AddChatMessage("You vote on " + players[index].Name);
+                    wcmd.Action = CommandEnum.Vote;
+                    wcmd.Payloads = new Dictionary<string, string>() { { "Target", players[index].Id.ToString() } };
+                    controller.ActionPerformed(wcmd);
+                }
+                catch(Exception ex)
+                {
+                    AddChatMessage("You can't vote on player" + i);
+                }
+
+            }
         }
     }
 }
