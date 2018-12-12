@@ -431,6 +431,7 @@ namespace WerewolfClient
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
+            WinApI.AnimateWindow(this.Handle, 2000, WinApI.BLEND);
             backGround_sound.controls.play();
             Choices commands = new Choices();
 
