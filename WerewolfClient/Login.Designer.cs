@@ -38,12 +38,13 @@ namespace WerewolfClient
             this.TbLogin = new System.Windows.Forms.TextBox();
             this.TbPassword = new System.Windows.Forms.TextBox();
             this.BtnSignIn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TBServer = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.BtnSignUp = new System.Windows.Forms.Button();
+            this.Register = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,17 +101,6 @@ namespace WerewolfClient
             this.BtnSignIn.UseVisualStyleBackColor = true;
             this.BtnSignIn.Click += new System.EventHandler(this.BtnSignIn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(472, 96);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 114);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -148,28 +138,47 @@ namespace WerewolfClient
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // BtnSignUp
+            // Register
             // 
-            this.BtnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSignUp.Location = new System.Drawing.Point(385, 448);
-            this.BtnSignUp.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnSignUp.Name = "BtnSignUp";
-            this.BtnSignUp.Size = new System.Drawing.Size(125, 55);
-            this.BtnSignUp.TabIndex = 5;
-            this.BtnSignUp.Text = "Sign Up";
-            this.BtnSignUp.UseVisualStyleBackColor = true;
-            this.BtnSignUp.Click += new System.EventHandler(this.BtnSignUp_Click);
+            this.Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Register.Location = new System.Drawing.Point(385, 449);
+            this.Register.Margin = new System.Windows.Forms.Padding(4);
+            this.Register.Name = "Register";
+            this.Register.Size = new System.Drawing.Size(125, 55);
+            this.Register.TabIndex = 10;
+            this.Register.Text = "Register";
+            this.Register.UseVisualStyleBackColor = true;
+            this.Register.Click += new System.EventHandler(this.Register_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(472, 96);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 114);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(932, 499);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 11;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 625);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Register);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TBServer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.BtnSignUp);
             this.Controls.Add(this.BtnSignIn);
             this.Controls.Add(this.TbPassword);
             this.Controls.Add(this.TbLogin);
@@ -199,7 +208,8 @@ namespace WerewolfClient
         private System.Windows.Forms.TextBox TBServer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button BtnSignUp;
+        private System.Windows.Forms.Button Register;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
     partial class WinApI
     {

@@ -48,10 +48,10 @@
             this.BtnPlayer1 = new System.Windows.Forms.Button();
             this.BtnPlayer0 = new System.Windows.Forms.Button();
             this.GBChat = new System.Windows.Forms.GroupBox();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.button1 = new System.Windows.Forms.Button();
             this.TbChatInput = new System.Windows.Forms.TextBox();
             this.TbChatBox = new System.Windows.Forms.TextBox();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.GBAction = new System.Windows.Forms.GroupBox();
             this.BtnJoin = new System.Windows.Forms.Button();
             this.BtnAction = new System.Windows.Forms.Button();
@@ -336,16 +336,6 @@
             this.GBChat.TabStop = false;
             this.GBChat.Text = "Chat";
             // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(967, 585);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
-            this.axWindowsMediaPlayer1.TabIndex = 3;
-            this.axWindowsMediaPlayer1.Visible = false;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(44, 485);
@@ -376,6 +366,16 @@
             this.TbChatBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TbChatBox.Size = new System.Drawing.Size(471, 501);
             this.TbChatBox.TabIndex = 0;
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(967, 585);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
+            this.axWindowsMediaPlayer1.TabIndex = 3;
+            this.axWindowsMediaPlayer1.Visible = false;
             // 
             // GBAction
             // 

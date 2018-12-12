@@ -80,7 +80,7 @@ namespace WerewolfClient
 
         private void TBServer_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -105,6 +105,13 @@ namespace WerewolfClient
                 timer1.Stop();
                 Application.Exit();
             }
+        }
+
+        private void Register_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            register frm = new register(this);
+            frm.Show();
         }
     }
 }
