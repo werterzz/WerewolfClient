@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.GBPlayers = new System.Windows.Forms.GroupBox();
             this.BtnPlayer15 = new System.Windows.Forms.Button();
@@ -61,6 +62,8 @@
             this.LBPeriod = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.GBPlayers.SuspendLayout();
             this.GBChat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -342,6 +345,7 @@
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
             this.axWindowsMediaPlayer1.TabIndex = 3;
+            this.axWindowsMediaPlayer1.Visible = false;
             // 
             // button1
             // 
@@ -487,11 +491,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Day #";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1025, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(60, 24);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "leave";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 625);
+            this.ClientSize = new System.Drawing.Size(1094, 628);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.GBStatus);
             this.Controls.Add(this.GBAction);
             this.Controls.Add(this.GBChat);
@@ -499,6 +518,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Werewolf Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -547,6 +567,8 @@
         private System.Windows.Forms.Button BtnAction;
         private System.Windows.Forms.Button button1;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
