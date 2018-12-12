@@ -170,6 +170,9 @@ namespace WerewolfClient
                     case EventEnum.GameStopped:
                         AddChatMessage("Game is finished, outcome is " + wm.EventPayloads["Game.Outcome"]);
                         _updateTimer.Enabled = false;
+                        BtnJoin.Visible = true;
+                        EnableButton(BtnJoin, true);
+
                         break;
                     case EventEnum.GameStarted:
                         players = wm.Players;
