@@ -77,5 +77,16 @@ namespace WerewolfClient
         {
 
         }
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            WinApI.AnimateWindow(this.Handle, 2000, WinApI.BLEND);
+        }
+       
     }
 }

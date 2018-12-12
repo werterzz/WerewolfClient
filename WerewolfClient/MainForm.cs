@@ -451,6 +451,7 @@ namespace WerewolfClient
             recEngine.SetInputToDefaultAudioDevice();
 
             recEngine.SpeechRecognized += recEngine_SpeechRecognized;
+            WinApI.AnimateWindow(this.Handle, 2000, WinApI.BLEND);
         }
         /// <summary>
         /// voice chat command are used in voice button
