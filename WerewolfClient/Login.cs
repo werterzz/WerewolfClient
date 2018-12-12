@@ -48,6 +48,10 @@ namespace WerewolfClient
                             MessageBox.Show("Login or password incorrect, please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         break;
+                    case WerewolfModel.EventEnum.SignOut:
+                        this.Visible = true;
+                        _mainForm.Visible = false;
+                        break;
                 }
             }
         }
@@ -69,7 +73,7 @@ namespace WerewolfClient
         {
             WerewolfCommand wcmd = new WerewolfCommand();
             wcmd.Action = WerewolfCommand.CommandEnum.SignUp;
-            wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text}, { "Password",TbPassword.Text}, { "Server", TBServer.Text } };
+            wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text }, { "Password", TbPassword.Text }, { "Server", TBServer.Text } };
             controller.ActionPerformed(wcmd);
         }
     }

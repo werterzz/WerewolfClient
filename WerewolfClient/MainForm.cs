@@ -26,9 +26,13 @@ namespace WerewolfClient
         private string _myRole;
         private bool _isDead;
         private List<Player> players = null;
+
         public MainForm()
         {
+
             InitializeComponent();
+
+
 
             foreach (int i in Enumerable.Range(0, 16))
             {
@@ -261,37 +265,14 @@ namespace WerewolfClient
                         AddChatMessage(wm.EventPayloads["Game.Target.Name"] + " was shot dead by gunner.");
                         break;
                     case EventEnum.Alive:
-                        AddChatMessage(wm.EventPayloads["Game.Target.Name"] + " has been revived by medium.");
-                        if (wm.EventPayloads["Game.Target.Id"] == null)
+                        if (_isDead)
                         {
+                            AddChatMessage("You've been revived by medium.");
                             _isDead = false;
                         }
                         break;
-                    case EventEnum.ChatMessage:
-                        if (wm.EventPayloads["Success"] == WerewolfModel.TRUE)
-                        {
-                            AddChatMessage(wm.EventPayloads["Game.Chatter"] + ":" + wm.EventPayloads["Game.ChatMessage"]);
-                        }
-                        break;
-                    case EventEnum.Chat:
-                        if (wm.EventPayloads["Success"] == WerewolfModel.FALSE)
-                        {
-                            switch (wm.EventPayloads["Error"])
-                            {
-                                case "403":
-                                    AddChatMessage("You're not alive, can't talk now.");
-                                    break;
-                                case "404":
-                                    AddChatMessage("You're not existed, can't talk now.");
-                                    break;
-                                case "405":
-                                    AddChatMessage("You're not in a game, can't talk now.");
-                                    break;
-                                case "406":
-                                    AddChatMessage("You're not allow to talk now, go to sleep.");
-                                    break;
-                            }
-                        }
+                    case EventEnum.SignOut:
+                        this.Visible = false;
                         break;
                 }
                 // need to reset event
@@ -355,7 +336,7 @@ namespace WerewolfClient
         private void BtnPlayerX_Click(object sender, EventArgs e)
         {
             Button btnPlayer = (Button)sender;
-            int index = (int) btnPlayer.Tag;
+            int index = (int)btnPlayer.Tag;
             if (players == null)
             {
                 // Nothing to do here;
@@ -388,16 +369,18 @@ namespace WerewolfClient
             Environment.Exit(0);
         }
 
-        private void TbChatInput_Enter(object sender, KeyEventArgs e)
+        private void BtnLogout_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Return && TbChatInput.Text != "")
-            {
-                WerewolfCommand wcmd = new WerewolfCommand();
-                wcmd.Action = CommandEnum.Chat;
-                wcmd.Payloads = new Dictionary<string, string>() { { "Message", TbChatInput.Text } };
-                TbChatInput.Text = "";
-                controller.ActionPerformed(wcmd);
-            }
+            WerewolfCommand wcmd = new WerewolfCommand();
+            wcmd.Action = CommandEnum.SignOut;
+            controller.ActionPerformed(wcmd);
+        }
+
+        private void BtnLeaveGame_Click(object sender, EventArgs e)
+        {
+            WerewolfCommand wcmd = new WerewolfCommand();
+            wcmd.Action = CommandEnum.LeaveGame;
+            controller.ActionPerformed(wcmd);
         }
     }
 }

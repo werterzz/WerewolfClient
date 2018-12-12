@@ -18,7 +18,6 @@ namespace WerewolfClient
             LeaveGame = 6,
             Vote = 7,
             Action = 8,
-            Chat = 9,
         };
         public new CommandEnum Action { get; set; }
     }
@@ -40,7 +39,7 @@ namespace WerewolfClient
         }
         public override void ActionPerformed(Command cmd)
         {
-            foreach(Model m in mList)
+            foreach (Model m in mList)
             {
                 if (m is WerewolfModel && cmd is WerewolfCommand)
                 {
@@ -57,6 +56,7 @@ namespace WerewolfClient
                             break;
 
                         case WerewolfCommand.CommandEnum.SignOut:
+                            wm.SignOut();
                             break;
 
                         case WerewolfCommand.CommandEnum.JoinGame:
@@ -66,14 +66,15 @@ namespace WerewolfClient
                         case WerewolfCommand.CommandEnum.RequestUpdate:
                             wm.Update();
                             break;
+                        case WerewolfCommand.CommandEnum.LeaveGame:
+                            wm.LeaveGame();
+                            break;
+
                         case WerewolfCommand.CommandEnum.Vote:
                             wm.Vote(cmd.Payloads["Target"]);
                             break;
                         case WerewolfCommand.CommandEnum.Action:
                             wm.Action(cmd.Payloads["Target"]);
-                            break;
-                        case WerewolfCommand.CommandEnum.Chat:
-                            wm.Chat(cmd.Payloads["Message"]);
                             break;
                     }
                 }
