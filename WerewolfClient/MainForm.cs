@@ -32,10 +32,17 @@ namespace WerewolfClient
         private List<Player> players = null;
         SpeechRecognitionEngine recEngine = new SpeechRecognitionEngine();
         WindowsMediaPlayer backGround_sound = new WindowsMediaPlayer();
+        private System.Windows.Forms.Timer timer1;
+        private int counter = 10;
         public MainForm()
         {
             InitializeComponent();
             backGround_sound.URL = "Fantasy_Game_Background_Looping.mp3";
+            backGround_sound.settings.setMode("loop", true);
+
+
+            this.timer_time();
+
             foreach (int i in Enumerable.Range(0, 16))
             {
                 this.Controls["GBPlayers"].Controls["BtnPlayer" + i].Click += new System.EventHandler(this.BtnPlayerX_Click);
@@ -303,6 +310,17 @@ namespace WerewolfClient
                             }
                         }
                         break;
+                    case EventEnum.SignOut:
+                        this.Visible = false;
+                        BtnJoin.Visible = true;
+                        EnableButton(BtnJoin, true);
+                        TbChatBox.Text = "";
+                        break;
+                    case EventEnum.LeaveGame:
+                        BtnJoin.Visible = true;
+                        EnableButton(BtnJoin, true);
+                        TbChatBox.Text = "";
+                        break;
                 }
                 // need to reset event
                 wm.Event = EventEnum.NOP;
@@ -434,7 +452,7 @@ namespace WerewolfClient
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            backGround_sound.controls.play();
+            //backGround_sound.controls.play();
             Choices commands = new Choices();
 
             commands.Add(new string[] { "say hello", "print my name", "kill", "vote",
@@ -702,7 +720,45 @@ namespace WerewolfClient
             }
 
         }
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            WerewolfCommand wcmd = new WerewolfCommand();
+            wcmd.Action = CommandEnum.SignOut;
+            controller.ActionPerformed(wcmd);
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void Leave_Click(object sender, EventArgs e)
+        {
+            WerewolfCommand wcmd = new WerewolfCommand();
+            wcmd.Action = CommandEnum.LeaveGame;
+            controller.ActionPerformed(wcmd);
+
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            counter--;
+            System.Console.WriteLine(counter);
+            backGround_sound.settings.volume += 5;
+            if (counter == 0)
+
+                timer1.Stop();
+
+        }
+        private void timer_time()
+        {
+            //int counter = 6;
+            timer1 = new Timer();
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 1000; // 1 second
+            timer1.Start();
+            backGround_sound.settings.volume = 0;
 
 
+        }
     }
 }

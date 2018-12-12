@@ -47,6 +47,8 @@
             this.BtnPlayer1 = new System.Windows.Forms.Button();
             this.BtnPlayer0 = new System.Windows.Forms.Button();
             this.GBChat = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.button1 = new System.Windows.Forms.Button();
             this.TbChatInput = new System.Windows.Forms.TextBox();
@@ -61,6 +63,7 @@
             this.LBPeriod = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Leave = new System.Windows.Forms.Button();
             this.GBPlayers.SuspendLayout();
             this.GBChat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -321,6 +324,9 @@
             // 
             // GBChat
             // 
+            this.GBChat.Controls.Add(this.Leave);
+            this.GBChat.Controls.Add(this.button3);
+            this.GBChat.Controls.Add(this.button2);
             this.GBChat.Controls.Add(this.axWindowsMediaPlayer1);
             this.GBChat.Controls.Add(this.button1);
             this.GBChat.Controls.Add(this.TbChatInput);
@@ -333,6 +339,26 @@
             this.GBChat.TabIndex = 2;
             this.GBChat.TabStop = false;
             this.GBChat.Text = "Chat";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(383, 262);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Exit";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(241, 434);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Sign Out";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // axWindowsMediaPlayer1
             // 
@@ -487,6 +513,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Day #";
             // 
+            // Leave
+            // 
+            this.Leave.Location = new System.Drawing.Point(214, 312);
+            this.Leave.Name = "Leave";
+            this.Leave.Size = new System.Drawing.Size(75, 23);
+            this.Leave.TabIndex = 6;
+            this.Leave.Text = "Leave Game";
+            this.Leave.UseVisualStyleBackColor = true;
+            this.Leave.Click += new System.EventHandler(this.Leave_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -546,6 +582,9 @@
         private System.Windows.Forms.Button BtnAction;
         private System.Windows.Forms.Button button1;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Leave;
     }
 }
 

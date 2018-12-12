@@ -48,6 +48,10 @@ namespace WerewolfClient
                             MessageBox.Show("Login or password incorrect, please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         break;
+                    case WerewolfModel.EventEnum.SignOut:
+                        this.Visible = true;
+                        _mainForm.Visible = false;
+                        break;
                 }
             }
         }

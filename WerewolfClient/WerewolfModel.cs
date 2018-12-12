@@ -7,6 +7,7 @@ using WerewolfAPI.Model;
 using System.Threading;
 using Action = WerewolfAPI.Model.Action;
 using WerewolfAPI.Client;
+using System.Diagnostics;
 
 namespace WerewolfClient
 {
@@ -58,6 +59,8 @@ namespace WerewolfClient
             Alive = 15,
             Chat = 16,
             ChatMessage = 17,
+            SignOut = 18,
+            LeaveGame = 19
         }
         public const string ROLE_SEER = "Seer";
         public const string ROLE_AURA_SEER = "Aura Seer";
@@ -105,7 +108,7 @@ namespace WerewolfClient
         public WerewolfModel()
         {
             _eventPayloads = new Dictionary<string, string>();
-            _autoEvent = new AutoResetEvent(false);
+            _autoEvent = new AutoResetEvent(true);
         }
 
         private void InitilizeModel(string basepath)
@@ -369,7 +372,7 @@ namespace WerewolfClient
             {
                 InitilizeModel(server);
                 Player p = new Player(null, login, password, null, null, null, Player.StatusEnum.Offline);
-                _player = _playerEP.LoginPlayer(p);
+                    _player = _playerEP.LoginPlayer(p);
                 Console.WriteLine(_player.Session);
                 _event = EventEnum.SignIn;
                 _eventPayloads["Success"] = TRUE;
@@ -400,6 +403,46 @@ namespace WerewolfClient
                 _eventPayloads["Success"] = FALSE;
                 _eventPayloads["Error"] = ex.ToString();
             }
+            NotifyAll();
+        }
+
+        public void SignOut()
+        {
+
+            //_autoEvent = new AutoResetEvent(true);
+            //_game = _gameEP.GameSessionSessionIDDelete(_player.Session);
+            //_player = _playerEP.LogoutPlayer(_player.Session);
+            var result = _gameEP.GameGet();
+            Console.WriteLine(result);
+            _game = null;
+            _player = null;
+            _roles = null;
+            _actions = null;
+            _playerRole = null;
+            _playerActions = null;
+            _currentDay = 0;
+            _currentTime = 0;
+            //Player = { get => _player; }
+            _isPlaying = false;
+
+            _event = EventEnum.SignOut;
+            _eventPayloads["Success"] = FALSE;
+            NotifyAll();
+        }
+        public void LeaveGame()
+        {
+            _game = null;
+            _player = null;
+            _roles = null;
+            _actions = null;
+            _playerRole = null;
+            _playerActions = null;
+            _currentDay = 0;
+            _currentTime = 0;
+            _isPlaying = false;
+
+            _event = EventEnum.LeaveGame;
+            _eventPayloads["Success"] = FALSE;
             NotifyAll();
         }
 
