@@ -324,7 +324,6 @@
             // 
             // GBChat
             // 
-            this.GBChat.Controls.Add(this.axWindowsMediaPlayer1);
             this.GBChat.Controls.Add(this.button1);
             this.GBChat.Controls.Add(this.TbChatInput);
             this.GBChat.Controls.Add(this.TbChatBox);
@@ -340,7 +339,7 @@
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(338, 276);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(967, 585);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
@@ -510,6 +509,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 628);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.GBStatus);
             this.Controls.Add(this.GBAction);
