@@ -14,10 +14,11 @@ namespace WerewolfClient
     {
         WerewolfController controller;
         private Login _login;
-        public register(Login login)
+        public register(Login login,string sever)
         {
             InitializeComponent();
             _login = login;
+            TBServer.Text = sever;
         }
 
         public void Notify(Model m)

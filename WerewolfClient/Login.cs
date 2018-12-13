@@ -110,7 +110,8 @@ namespace WerewolfClient
         private void Register_Click(object sender, EventArgs e)
         {
             this.Hide();
-            register frm = new register(this);
+            string sever = TBServer.Text;
+            register frm = new register(this,sever);
             frm.Show();
         }
     }

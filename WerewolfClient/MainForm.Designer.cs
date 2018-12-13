@@ -516,10 +516,12 @@
             this.Controls.Add(this.GBChat);
             this.Controls.Add(this.GBPlayers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(500, 500);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Werewolf Client";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.GBPlayers.ResumeLayout(false);
@@ -569,6 +571,7 @@
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Timer timer1;
+
     }
 }
 
