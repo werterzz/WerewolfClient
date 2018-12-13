@@ -49,9 +49,9 @@
             this.BtnPlayer0 = new System.Windows.Forms.Button();
             this.GBChat = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.TbChatInput = new System.Windows.Forms.TextBox();
             this.TbChatBox = new System.Windows.Forms.TextBox();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.GBAction = new System.Windows.Forms.GroupBox();
             this.BtnJoin = new System.Windows.Forms.Button();
             this.BtnAction = new System.Windows.Forms.Button();
@@ -64,6 +64,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.HowtoPlay = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             this.GBPlayers.SuspendLayout();
             this.GBChat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -325,6 +329,7 @@
             // GBChat
             // 
             this.GBChat.Controls.Add(this.button1);
+            this.GBChat.Controls.Add(this.axWindowsMediaPlayer1);
             this.GBChat.Controls.Add(this.TbChatInput);
             this.GBChat.Controls.Add(this.TbChatBox);
             this.GBChat.Location = new System.Drawing.Point(551, 15);
@@ -338,7 +343,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(44, 485);
+            this.button1.Location = new System.Drawing.Point(425, 563);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -346,10 +351,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.buttonVoice_Click);
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(425, 570);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
+            this.axWindowsMediaPlayer1.TabIndex = 3;
+            this.axWindowsMediaPlayer1.Visible = false;
+            // 
             // TbChatInput
             // 
             this.TbChatInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbChatInput.Location = new System.Drawing.Point(20, 533);
+            this.TbChatInput.Location = new System.Drawing.Point(29, 533);
             this.TbChatInput.Margin = new System.Windows.Forms.Padding(4);
             this.TbChatInput.Name = "TbChatInput";
             this.TbChatInput.Size = new System.Drawing.Size(471, 30);
@@ -359,23 +374,13 @@
             // TbChatBox
             // 
             this.TbChatBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbChatBox.Location = new System.Drawing.Point(29, 24);
+            this.TbChatBox.Location = new System.Drawing.Point(29, 23);
             this.TbChatBox.Margin = new System.Windows.Forms.Padding(4);
             this.TbChatBox.Multiline = true;
             this.TbChatBox.Name = "TbChatBox";
             this.TbChatBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TbChatBox.Size = new System.Drawing.Size(471, 501);
             this.TbChatBox.TabIndex = 0;
-            // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(967, 585);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
-            this.axWindowsMediaPlayer1.TabIndex = 3;
-            this.axWindowsMediaPlayer1.Visible = false;
             // 
             // GBAction
             // 
@@ -492,24 +497,56 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1025, 8);
+            this.button2.Location = new System.Drawing.Point(1128, 38);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(60, 24);
             this.button2.TabIndex = 9;
             this.button2.Text = "leave";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // HowtoPlay
+            // 
+            this.HowtoPlay.Location = new System.Drawing.Point(1078, 68);
+            this.HowtoPlay.Name = "HowtoPlay";
+            this.HowtoPlay.Size = new System.Drawing.Size(110, 28);
+            this.HowtoPlay.TabIndex = 10;
+            this.HowtoPlay.Text = "How to play";
+            this.HowtoPlay.UseVisualStyleBackColor = true;
+            this.HowtoPlay.Visible = false;
+            this.HowtoPlay.Click += new System.EventHandler(this.HowtoPlay_Click);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1113, 15);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Menu";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 628);
-            this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.BackgroundImage = global::WerewolfClient.Properties.Resources.Daytime;
+            this.ClientSize = new System.Drawing.Size(1200, 650);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.HowtoPlay);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.GBStatus);
             this.Controls.Add(this.GBAction);
@@ -571,7 +608,10 @@
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Timer timer1;
-
+        private System.Windows.Forms.Button HowtoPlay;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Button button3;
     }
 }
 

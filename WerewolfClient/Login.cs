@@ -31,9 +31,12 @@ namespace WerewolfClient
                     case WerewolfModel.EventEnum.SignIn:
                         if (wm.EventPayloads["Success"] == "True" )
                         {
-                           
-                            _mainForm.Visible = true;
                             this.Visible = false;
+                            Menu mMenu = new Menu(_mainForm);
+                            if (_mainForm.Visible == false)
+                            {
+                                mMenu.Show();
+                            }
                         }
                         else
                         {

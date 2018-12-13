@@ -131,9 +131,7 @@ namespace WerewolfClient
                         case WerewolfModel.ROLE_FOOL:
                             img = Properties.Resources.Icon_fool;
                             break;
-                        case WerewolfModel.ROLE_HEAD_HUNTER:
-                            img = Properties.Resources.Icon_head_hunter;
-                            break;
+                        
                         case WerewolfModel.ROLE_SERIAL_KILLER:
                             img = Properties.Resources.Icon_serial_killer;
                             break;
@@ -219,11 +217,17 @@ namespace WerewolfClient
                         UpdateAvatar(wm);
                         break;
                     case EventEnum.SwitchToDayTime:
+                        timer2.Start();
+                        
                         AddChatMessage("Switch to day time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Day;
                         LBPeriod.Text = "Day time of";
+                        
+
                         break;
                     case EventEnum.SwitchToNightTime:
+                        timer3.Start();
+                        
                         AddChatMessage("Switch to night time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Night;
                         LBPeriod.Text = "Night time of";
@@ -434,7 +438,7 @@ namespace WerewolfClient
             this.StartPosition = FormStartPosition.Manual;
             this.Top = (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - this.Width) / 2;
-            WinApI.AnimateWindow(this.Handle, 2000, WinApI.BLEND);
+            WinApI.AnimateWindow(this.Handle, 1500, WinApI.BLEND);
             backGround_sound.controls.play();
             Choices commands = new Choices();
 
@@ -724,6 +728,58 @@ namespace WerewolfClient
                     Application.Exit();
                 }
             
+        }
+
+        private void HowtoPlay_Click(object sender, EventArgs e)
+        {
+            HTP htp = new HTP(this);
+            this.Visible = false;
+            htp.Visible = true;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+               
+                timer2.Stop();
+                this.BackgroundImage = Properties.Resources.Daytime;
+            }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+
+                timer3.Stop();
+                this.BackgroundImage = Properties.Resources.Nighttime;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int checkk = 0;
+            if (HowtoPlay.Visible == false&& button2.Visible==false )
+            {
+                HowtoPlay.Visible = true;
+                button2.Visible = true;
+                checkk++;
+            }
+            else
+            {
+                HowtoPlay.Visible = false;
+                button2.Visible = false;
+              
+            }
         }
     }
 }
