@@ -48,6 +48,10 @@ namespace WerewolfClient
                             MessageBox.Show("Login or password incorrect, please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         break;
+                    case WerewolfModel.EventEnum.SignOut:
+                        this.Visible = true;
+                        _mainForm.Visible = false;
+                        break;
                 }
             }
         }
@@ -71,6 +75,30 @@ namespace WerewolfClient
             wcmd.Action = WerewolfCommand.CommandEnum.SignUp;
             wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text}, { "Password",TbPassword.Text}, { "Server", TBServer.Text } };
             controller.ActionPerformed(wcmd);
+        }
+
+        private void TBServer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                WerewolfCommand wcmd = new WerewolfCommand();
+                wcmd.Action = WerewolfCommand.CommandEnum.SignIn;
+                wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text }, { "Password", TbPassword.Text }, { "Server", TBServer.Text } };
+                controller.ActionPerformed(wcmd);
+            }
+        }
+
+        private void sound_Click(object sender, EventArgs e)
+        {
+            WerewolfCommand wcmd = new WerewolfCommand();
+            wcmd.Action = WerewolfCommand.CommandEnum.SoundBackground;
+            controller.ActionPerformed(wcmd);
+
         }
     }
 }
