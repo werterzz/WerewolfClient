@@ -8,6 +8,7 @@ using System.Threading;
 using Action = WerewolfAPI.Model.Action;
 using WerewolfAPI.Client;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace WerewolfClient
 {
@@ -60,7 +61,9 @@ namespace WerewolfClient
             Chat = 16,
             ChatMessage = 17,
             SignOut = 18,
-            LeaveGame = 19
+            LeaveGame = 19,
+            Soundbackground = 20,
+            GameWaiting = 21
         }
         public const string ROLE_SEER = "Seer";
         public const string ROLE_AURA_SEER = "Aura Seer";
@@ -219,6 +222,10 @@ namespace WerewolfClient
                             }
                         }
                     }
+                    else
+                    {
+                        _event = EventEnum.GameWaiting;
+                    }
                     NotifyAll();
                 }
                 else //_isPlaying
@@ -357,6 +364,8 @@ namespace WerewolfClient
                 _event = EventEnum.JoinGame;
                 _eventPayloads["Success"] = TRUE;
                 _eventPayloads["Game.Id"] = _game.Id.ToString();
+
+
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
@@ -372,10 +381,19 @@ namespace WerewolfClient
             {
                 InitilizeModel(server);
                 Player p = new Player(null, login, password, null, null, null, Player.StatusEnum.Offline);
+                //if(p == null)
                     _player = _playerEP.LoginPlayer(p);
-                Console.WriteLine(_player.Session);
-                _event = EventEnum.SignIn;
-                _eventPayloads["Success"] = TRUE;
+                if(_player.Id == null)
+                {
+                    MessageBox.Show("username or password incorrect");
+                }
+                else
+                {
+                    Console.WriteLine(_player.Session);
+                    _event = EventEnum.SignIn;
+                    _eventPayloads["Success"] = TRUE;
+                }
+                
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
@@ -409,11 +427,9 @@ namespace WerewolfClient
         public void SignOut()
         {
 
-            //_autoEvent = new AutoResetEvent(true);
-            //_game = _gameEP.GameSessionSessionIDDelete(_player.Session);
-            //_player = _playerEP.LogoutPlayer(_player.Session);
-            var result = _gameEP.GameGet();
-            Console.WriteLine(result);
+            
+            _game = _gameEP.GameSessionSessionIDDelete(_player.Session);
+            _playerEP.LogoutPlayer(_player.Session);
             _game = null;
             _player = null;
             _roles = null;
@@ -431,8 +447,9 @@ namespace WerewolfClient
         }
         public void LeaveGame()
         {
+            _game = _gameEP.GameSessionSessionIDDelete(_player.Session);
             _game = null;
-            _player = null;
+            //_player = null;
             _roles = null;
             _actions = null;
             _playerRole = null;
@@ -443,6 +460,11 @@ namespace WerewolfClient
 
             _event = EventEnum.LeaveGame;
             _eventPayloads["Success"] = FALSE;
+            NotifyAll();
+        }
+        public void SoundBackground()
+        {
+            _event = EventEnum.Soundbackground;
             NotifyAll();
         }
 

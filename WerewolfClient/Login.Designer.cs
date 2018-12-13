@@ -38,6 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TBServer = new System.Windows.Forms.TextBox();
+            this.sound = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,15 +139,26 @@
             this.TBServer.Name = "TBServer";
             this.TBServer.Size = new System.Drawing.Size(363, 34);
             this.TBServer.TabIndex = 8;
-            this.TBServer.Text = "http://project-ile.net:2342/werewolf/";
+            this.TBServer.Text = "http://project-ile.net:2344/werewolf";
             this.TBServer.TextChanged += new System.EventHandler(this.TBServer_TextChanged);
             this.TBServer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
+            // 
+            // sound
+            // 
+            this.sound.Location = new System.Drawing.Point(50, 323);
+            this.sound.Name = "sound";
+            this.sound.Size = new System.Drawing.Size(75, 23);
+            this.sound.TabIndex = 9;
+            this.sound.Text = "sound";
+            this.sound.UseVisualStyleBackColor = true;
+            this.sound.Click += new System.EventHandler(this.sound_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 404);
+            this.Controls.Add(this.sound);
             this.Controls.Add(this.TBServer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -177,5 +189,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TBServer;
+        private System.Windows.Forms.Button sound;
     }
 }

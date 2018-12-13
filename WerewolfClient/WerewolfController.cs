@@ -19,6 +19,7 @@ namespace WerewolfClient
             Vote = 7,
             Action = 8,
             Chat = 9,
+            SoundBackground = 10
         };
         public new CommandEnum Action { get; set; }
     }
@@ -78,6 +79,9 @@ namespace WerewolfClient
                             break;
                         case WerewolfCommand.CommandEnum.Chat:
                             wm.Chat(cmd.Payloads["Message"]);
+                            break;
+                        case WerewolfCommand.CommandEnum.SoundBackground:
+                            wm.SoundBackground();
                             break;
                     }
                 }

@@ -92,5 +92,13 @@ namespace WerewolfClient
                 controller.ActionPerformed(wcmd);
             }
         }
+
+        private void sound_Click(object sender, EventArgs e)
+        {
+            WerewolfCommand wcmd = new WerewolfCommand();
+            wcmd.Action = WerewolfCommand.CommandEnum.SoundBackground;
+            controller.ActionPerformed(wcmd);
+
+        }
     }
 }

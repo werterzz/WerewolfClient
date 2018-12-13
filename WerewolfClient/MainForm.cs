@@ -29,19 +29,24 @@ namespace WerewolfClient
         private string _role_voiceChat; //used for keep role from user voice
         private string _myRole;
         private bool _isDead;
+        private bool _isSound; //for sound_background timer
+        private bool clickSound; //for sound_background timer
         private List<Player> players = null;
         SpeechRecognitionEngine recEngine = new SpeechRecognitionEngine();
         WindowsMediaPlayer backGround_sound = new WindowsMediaPlayer();
         private System.Windows.Forms.Timer timer1;
-        private int counter = 10;
+        private int counter = 2; //for timer sound
+        private int playerCounter = 0; //for counter player in GameWaiting
         public MainForm()
         {
             InitializeComponent();
             backGround_sound.URL = "Fantasy_Game_Background_Looping.mp3";
+            backGround_sound.settings.volume = 0;
+            _isSound = true;
             backGround_sound.settings.setMode("loop", true);
 
+            timer_time();
 
-            this.timer_time();
 
             foreach (int i in Enumerable.Range(0, 16))
             {
@@ -228,6 +233,18 @@ namespace WerewolfClient
                         EnableButton(BtnJoin, false);
                         UpdateAvatar(wm);
                         break;
+                    case EventEnum.GameWaiting:
+                        if(playerCounter != wm.Players.Count)
+                        {
+                            foreach (Player player in wm.Players)
+                            {
+                                AddChatMessage(player.Name + " Join Game !!!");
+                            }
+                            playerCounter = wm.Players.Count;
+                        }
+                        break;
+
+
                     case EventEnum.SwitchToDayTime:
                         AddChatMessage("Switch to day time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Day;
@@ -315,9 +332,33 @@ namespace WerewolfClient
                         BtnJoin.Visible = true;
                         EnableButton(BtnJoin, true);
                         TbChatBox.Text = "";
+                        playerCounter = 0;
                         break;
                     case EventEnum.LeaveGame:
                         BtnJoin.Visible = true;
+                        EnableButton(BtnJoin, true);
+                        TbChatBox.Text = "";
+                        playerCounter = 0;
+                        break;
+                    case EventEnum.Soundbackground:
+                        if(_isSound)
+                        {
+                            counter = 2;
+                            //backGround_sound.settings.volume = 20;
+                            //clickSound = !clickSound;
+                            _isSound = false;
+                            timer_time();
+                            
+                        }
+                        else
+                        {
+
+                            counter = 2;
+                            //backGround_sound.settings.volume = 0;
+                            clickSound = !clickSound;
+                            _isSound = true;
+                            timer_time();
+                        }
                         EnableButton(BtnJoin, true);
                         TbChatBox.Text = "";
                         break;
@@ -743,10 +784,32 @@ namespace WerewolfClient
         {
             counter--;
             System.Console.WriteLine(counter);
-            backGround_sound.settings.volume += 5;
-            if (counter == 0)
+            if(!_isSound)
+            {
+                backGround_sound.settings.volume += 1;
+            }
+            else
+            {
+                backGround_sound.settings.volume -= 1;
+            }
 
+            
+            if (backGround_sound.settings.volume >= 20 || backGround_sound.settings.volume <= 0)
+            {
+                //if (_isSound)
+                //{
+                //    backGround_sound.controls.pause();
+                //}
+                //else
+                //{
+                //    backGround_sound.controls.play();
+                //}
+                //_isSound = !_isSound;
+                //clickSound = !clickSound;
                 timer1.Stop();
+
+            }
+                
 
         }
         private void timer_time()
@@ -754,9 +817,9 @@ namespace WerewolfClient
             //int counter = 6;
             timer1 = new Timer();
             timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Interval = 1000; // 1 second
+            timer1.Interval = 10; // 1 second
             timer1.Start();
-            backGround_sound.settings.volume = 0;
+
 
 
         }

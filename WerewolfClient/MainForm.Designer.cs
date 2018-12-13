@@ -47,6 +47,7 @@
             this.BtnPlayer1 = new System.Windows.Forms.Button();
             this.BtnPlayer0 = new System.Windows.Forms.Button();
             this.GBChat = new System.Windows.Forms.GroupBox();
+            this.Leave = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -63,7 +64,7 @@
             this.LBPeriod = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Leave = new System.Windows.Forms.Button();
+            this.playerInGame = new System.Windows.Forms.Button();
             this.GBPlayers.SuspendLayout();
             this.GBChat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -324,6 +325,7 @@
             // 
             // GBChat
             // 
+            this.GBChat.Controls.Add(this.playerInGame);
             this.GBChat.Controls.Add(this.Leave);
             this.GBChat.Controls.Add(this.button3);
             this.GBChat.Controls.Add(this.button2);
@@ -339,6 +341,16 @@
             this.GBChat.TabIndex = 2;
             this.GBChat.TabStop = false;
             this.GBChat.Text = "Chat";
+            // 
+            // Leave
+            // 
+            this.Leave.Location = new System.Drawing.Point(214, 312);
+            this.Leave.Name = "Leave";
+            this.Leave.Size = new System.Drawing.Size(75, 23);
+            this.Leave.TabIndex = 6;
+            this.Leave.Text = "Leave Game";
+            this.Leave.UseVisualStyleBackColor = true;
+            this.Leave.Click += new System.EventHandler(this.Leave_Click);
             // 
             // button3
             // 
@@ -513,15 +525,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Day #";
             // 
-            // Leave
+            // playerInGame
             // 
-            this.Leave.Location = new System.Drawing.Point(214, 312);
-            this.Leave.Name = "Leave";
-            this.Leave.Size = new System.Drawing.Size(75, 23);
-            this.Leave.TabIndex = 6;
-            this.Leave.Text = "Leave Game";
-            this.Leave.UseVisualStyleBackColor = true;
-            this.Leave.Click += new System.EventHandler(this.Leave_Click);
+            this.playerInGame.Location = new System.Drawing.Point(143, 130);
+            this.playerInGame.Name = "playerInGame";
+            this.playerInGame.Size = new System.Drawing.Size(146, 23);
+            this.playerInGame.TabIndex = 7;
+            this.playerInGame.Text = "Player in game: ";
+            this.playerInGame.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -585,6 +596,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button Leave;
+        private System.Windows.Forms.Button playerInGame;
     }
 }
 
