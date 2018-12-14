@@ -34,18 +34,22 @@ namespace WerewolfClient
         private List<Player> players = null;
         SpeechRecognitionEngine recEngine = new SpeechRecognitionEngine();
         WindowsMediaPlayer backGround_sound = new WindowsMediaPlayer();
+
         private System.Windows.Forms.Timer timer1;
         private int counter = 2; //for timer sound
         private int playerCounter = 0; //for counter player in GameWaiting
+
         public MainForm()
         {
             InitializeComponent();
             backGround_sound.URL = "Fantasy_Game_Background_Looping.mp3";
+
             backGround_sound.settings.volume = 0;
             _isSound = true;
             backGround_sound.settings.setMode("loop", true);
 
             timer_time();
+
 
 
             foreach (int i in Enumerable.Range(0, 16))
@@ -493,7 +497,12 @@ namespace WerewolfClient
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+            WinApI.AnimateWindow(this.Handle, 2000, WinApI.BLEND);
+            backGround_sound.controls.play();
+
             //backGround_sound.controls.play();
+
             Choices commands = new Choices();
 
             commands.Add(new string[] { "say hello", "print my name", "kill", "vote",
@@ -513,6 +522,7 @@ namespace WerewolfClient
             recEngine.SetInputToDefaultAudioDevice();
 
             recEngine.SpeechRecognized += recEngine_SpeechRecognized;
+
         }
         /// <summary>
         /// voice chat command are used in voice button
@@ -761,6 +771,28 @@ namespace WerewolfClient
             }
 
         }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+           
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+                if (this.Opacity > 0.0)
+                {
+                    this.Opacity -= 0.1;
+                }
+                else
+                {
+                    timer1.Stop();
+                    Application.Exit();
+                }
+            
+
         private void BtnLogout_Click(object sender, EventArgs e)
         {
             WerewolfCommand wcmd = new WerewolfCommand();
@@ -780,7 +812,7 @@ namespace WerewolfClient
             controller.ActionPerformed(wcmd);
 
         }
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer2_Tick(object sender, EventArgs e)
         {
             counter--;
             System.Console.WriteLine(counter);
@@ -816,9 +848,10 @@ namespace WerewolfClient
         {
             //int counter = 6;
             timer1 = new Timer();
-            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Tick += new EventHandler(timer2_Tick);
             timer1.Interval = 10; // 1 second
             timer1.Start();
+
 
 
 
