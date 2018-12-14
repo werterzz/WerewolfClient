@@ -158,8 +158,26 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Wolf_สืบ.png" />
+    <None Include="Resources\Wolf_Seer.png" />
+    <None Include="Resources\Wolf.png" />
+    <None Include="Resources\Villager.png" />
+    <None Include="Resources\Seer.png" />
+    <None Include="Resources\Priest.png" />
+    <None Include="Resources\Night.png" />
+    <None Include="Resources\Medium.png" />
+    <None Include="Resources\Killer.png" />
+    <None Include="Resources\Jailer.png" />
     <None Include="Resources\Nighttime.png" />
     <None Include="Resources\Daytime.png" />
+    <None Include="Resources\aura.png" />
+    <None Include="Resources\Dead.png" />
+    <None Include="Resources\Doctor.png" />
+    <None Include="Resources\Fool.png" />
+    <None Include="Resources\Guard.png" />
+    <None Include="Resources\Gunner.png" />
+    <None Include="Resources\Icon_alpha_werewolf %282%29.png" />
+    <None Include="Resources\Day.png" />
     <Content Include="Resources\Icon_alpha_werewolf.png" />
     <Content Include="Resources\Icon_aura_seer.png" />
     <Content Include="Resources\Icon_bodyguard.png" />

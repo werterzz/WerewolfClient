@@ -63,9 +63,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.BtnPlayer0 = new System.Windows.Forms.Button();
             this.GBChat = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.TbChatInput = new System.Windows.Forms.TextBox();
             this.TbChatBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.playerInGame = new System.Windows.Forms.Button();
             this.htp_click = new System.Windows.Forms.Button();
@@ -473,10 +473,7 @@
             // 
             // GBChat
             // 
-
             this.GBChat.BackColor = System.Drawing.Color.Transparent;
-            this.GBChat.Controls.Add(this.button1);
-
             this.GBChat.Controls.Add(this.TbChatInput);
             this.GBChat.Controls.Add(this.TbChatBox);
             this.GBChat.Location = new System.Drawing.Point(317, 15);
@@ -487,17 +484,6 @@
             this.GBChat.TabIndex = 2;
             this.GBChat.TabStop = false;
             this.GBChat.Text = "Chat";
-            // 
-
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1088, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "voice";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonVoice_Click);
             // 
             // TbChatInput
             // 
@@ -520,6 +506,16 @@
             this.TbChatBox.Size = new System.Drawing.Size(348, 217);
             this.TbChatBox.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1088, 254);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "voice";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonVoice_Click);
+            // 
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
@@ -541,11 +537,9 @@
             // 
             // htp_click
             // 
-
             this.htp_click.Location = new System.Drawing.Point(317, 583);
             this.htp_click.Name = "htp_click";
             this.htp_click.Size = new System.Drawing.Size(192, 55);
-
             this.htp_click.TabIndex = 9;
             this.htp_click.Text = "how to play";
             this.htp_click.UseVisualStyleBackColor = true;
@@ -554,11 +548,9 @@
             // 
             // Leave
             // 
-
             this.Leave.Location = new System.Drawing.Point(317, 535);
             this.Leave.Name = "Leave";
             this.Leave.Size = new System.Drawing.Size(96, 42);
-
             this.Leave.TabIndex = 6;
             this.Leave.Text = "Leave Game";
             this.Leave.UseVisualStyleBackColor = true;
@@ -567,11 +559,9 @@
             // 
             // button3
             // 
-
             this.button3.Location = new System.Drawing.Point(511, 583);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(213, 55);
-
             this.button3.TabIndex = 5;
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = true;
@@ -580,11 +570,9 @@
             // 
             // button2
             // 
-
             this.button2.Location = new System.Drawing.Point(419, 535);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 42);
-
             this.button2.TabIndex = 4;
             this.button2.Text = "Sign Out";
             this.button2.UseVisualStyleBackColor = true;
@@ -729,10 +717,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1035, 666);
-
             this.Controls.Add(this.playerInGame);
             this.Controls.Add(this.menu_click);
             this.Controls.Add(this.htp_click);

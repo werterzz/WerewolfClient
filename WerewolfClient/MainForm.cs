@@ -35,16 +35,17 @@ namespace WerewolfClient
         SpeechRecognitionEngine recEngine = new SpeechRecognitionEngine();
         WindowsMediaPlayer backGround_sound = new WindowsMediaPlayer();
         private System.Windows.Forms.Timer timer1;
-        private int counter = 2; //for timer sound
+        private int counter = 3; //for timer sound
         private int playerCounter = 0; //for counter player in GameWaiting
 
         public MainForm()
         {
             InitializeComponent();
-            backGround_sound.URL = "Fantasy_Game_Background_Looping.mp3";
+            backGround_sound.URL = "rolemu_-_Peek-Door_Quest.mp3";
 
-            backGround_sound.settings.volume = 0;
-            _isSound = true;
+            backGround_sound.settings.volume = 50;
+            _isSound = false;
+            backGround_sound.controls.play();
             backGround_sound.settings.setMode("loop", true);
 
             timer_time();
@@ -840,7 +841,7 @@ namespace WerewolfClient
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            x
         }
 
         private void Leave_Click(object sender, EventArgs e)
@@ -857,15 +858,15 @@ namespace WerewolfClient
             System.Console.WriteLine(counter);
             if(!_isSound)
             {
-                backGround_sound.settings.volume += 1;
+                backGround_sound.settings.volume += 10;
             }
             else
             {
-                backGround_sound.settings.volume -= 1;
+                backGround_sound.settings.volume -= 10;
             }
 
             
-            if (backGround_sound.settings.volume >= 20 || backGround_sound.settings.volume <= 0)
+            if (backGround_sound.settings.volume >= 50 || backGround_sound.settings.volume <= 0)
             {
                 //if (_isSound)
                 //{
@@ -889,7 +890,7 @@ namespace WerewolfClient
             timer1 = new Timer();
             timer1.Tick += new EventHandler(timer1_Tick);
 
-            timer1.Interval = 10; // 1 second
+            timer1.Interval = 1000; // 1 second
             timer1.Start();
 
 
