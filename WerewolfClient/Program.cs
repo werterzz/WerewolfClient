@@ -22,17 +22,22 @@ namespace WerewolfClient
             Login mLogin = new Login(mMainForm);
             WerewolfController mControler =  WerewolfController.GetInstance();
             WerewolfModel mModel = new WerewolfModel();
+            register mRegister = new register(mLogin,"");
 
             // View -> Controller
             mMainForm.setController(mControler);
             mLogin.setController(mControler);
+            mRegister.setController(mControler);
 
             // Controler -> Model
             mControler.AddModel(mModel);
 
+
+
             // Model -> View
             mModel.AttachObserver(mLogin);
             mModel.AttachObserver(mMainForm);
+            mModel.AttachObserver(mRegister);
 
             Application.Run(mLogin);
         }
