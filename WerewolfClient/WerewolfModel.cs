@@ -7,6 +7,8 @@ using WerewolfAPI.Model;
 using System.Threading;
 using Action = WerewolfAPI.Model.Action;
 using WerewolfAPI.Client;
+using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace WerewolfClient
 {
@@ -58,6 +60,10 @@ namespace WerewolfClient
             Alive = 15,
             Chat = 16,
             ChatMessage = 17,
+            SignOut = 18,
+            LeaveGame = 19,
+            Soundbackground = 20,
+            GameWaiting = 21
         }
         public const string ROLE_SEER = "Seer";
         public const string ROLE_AURA_SEER = "Aura Seer";
@@ -105,7 +111,7 @@ namespace WerewolfClient
         public WerewolfModel()
         {
             _eventPayloads = new Dictionary<string, string>();
-            _autoEvent = new AutoResetEvent(false);
+            _autoEvent = new AutoResetEvent(true);
         }
 
         private void InitilizeModel(string basepath)
@@ -215,6 +221,10 @@ namespace WerewolfClient
                                 _eventPayloads["Player.Role.Name"] = "";
                             }
                         }
+                    }
+                    else
+                    {
+                        _event = EventEnum.GameWaiting;
                     }
                     NotifyAll();
                 }
@@ -354,6 +364,8 @@ namespace WerewolfClient
                 _event = EventEnum.JoinGame;
                 _eventPayloads["Success"] = TRUE;
                 _eventPayloads["Game.Id"] = _game.Id.ToString();
+
+
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
@@ -369,10 +381,19 @@ namespace WerewolfClient
             {
                 InitilizeModel(server);
                 Player p = new Player(null, login, password, null, null, null, Player.StatusEnum.Offline);
-                _player = _playerEP.LoginPlayer(p);
-                Console.WriteLine(_player.Session);
-                _event = EventEnum.SignIn;
-                _eventPayloads["Success"] = TRUE;
+                //if(p == null)
+                    _player = _playerEP.LoginPlayer(p);
+                if(_player.Id == null)
+                {
+                    MessageBox.Show("username or password incorrect");
+                }
+                else
+                {
+                    Console.WriteLine(_player.Session);
+                    _event = EventEnum.SignIn;
+                    _eventPayloads["Success"] = TRUE;
+                }
+                
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
@@ -400,6 +421,50 @@ namespace WerewolfClient
                 _eventPayloads["Success"] = FALSE;
                 _eventPayloads["Error"] = ex.ToString();
             }
+            NotifyAll();
+        }
+
+        public void SignOut()
+        {
+
+            
+            _game = _gameEP.GameSessionSessionIDDelete(_player.Session);
+            _playerEP.LogoutPlayer(_player.Session);
+            _game = null;
+            _player = null;
+            _roles = null;
+            _actions = null;
+            _playerRole = null;
+            _playerActions = null;
+            _currentDay = 0;
+            _currentTime = 0;
+            //Player = { get => _player; }
+            _isPlaying = false;
+
+            _event = EventEnum.SignOut;
+            _eventPayloads["Success"] = FALSE;
+            NotifyAll();
+        }
+        public void LeaveGame()
+        {
+            _game = _gameEP.GameSessionSessionIDDelete(_player.Session);
+            _game = null;
+            //_player = null;
+            _roles = null;
+            _actions = null;
+            _playerRole = null;
+            _playerActions = null;
+            _currentDay = 0;
+            _currentTime = 0;
+            _isPlaying = false;
+
+            _event = EventEnum.LeaveGame;
+            _eventPayloads["Success"] = FALSE;
+            NotifyAll();
+        }
+        public void SoundBackground()
+        {
+            _event = EventEnum.Soundbackground;
             NotifyAll();
         }
 

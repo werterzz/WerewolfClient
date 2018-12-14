@@ -48,6 +48,11 @@
             this.BtnPlayer1 = new System.Windows.Forms.Button();
             this.BtnPlayer0 = new System.Windows.Forms.Button();
             this.GBChat = new System.Windows.Forms.GroupBox();
+
+            this.Leave = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.button1 = new System.Windows.Forms.Button();
             this.TbChatInput = new System.Windows.Forms.TextBox();
@@ -62,8 +67,12 @@
             this.LBPeriod = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+
             this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+
+            this.playerInGame = new System.Windows.Forms.Button();
+
             this.GBPlayers.SuspendLayout();
             this.GBChat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -324,6 +333,13 @@
             // 
             // GBChat
             // 
+
+            this.GBChat.Controls.Add(this.playerInGame);
+            this.GBChat.Controls.Add(this.Leave);
+            this.GBChat.Controls.Add(this.button3);
+            this.GBChat.Controls.Add(this.button2);
+            this.GBChat.Controls.Add(this.axWindowsMediaPlayer1);
+
             this.GBChat.Controls.Add(this.button1);
             this.GBChat.Controls.Add(this.TbChatInput);
             this.GBChat.Controls.Add(this.TbChatBox);
@@ -336,19 +352,61 @@
             this.GBChat.TabStop = false;
             this.GBChat.Text = "Chat";
             // 
+
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(967, 585);
+
+            // Leave
+            // 
+            this.Leave.Location = new System.Drawing.Point(214, 312);
+            this.Leave.Name = "Leave";
+            this.Leave.Size = new System.Drawing.Size(75, 23);
+            this.Leave.TabIndex = 6;
+            this.Leave.Text = "Leave Game";
+            this.Leave.UseVisualStyleBackColor = true;
+            this.Leave.Click += new System.EventHandler(this.Leave_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(383, 262);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Exit";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(241, 434);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Sign Out";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.BtnLogout_Click);
+            // 
+            // axWindowsMediaPlayer1
+            // 
+
+
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
             this.axWindowsMediaPlayer1.TabIndex = 3;
+
             this.axWindowsMediaPlayer1.Visible = false;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(44, 485);
+
+            // 
+            // button1
+            // 
+
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -490,6 +548,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Day #";
             // 
+
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(1025, 8);
@@ -503,19 +562,33 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+
+            // playerInGame
+            // 
+            this.playerInGame.Location = new System.Drawing.Point(143, 130);
+            this.playerInGame.Name = "playerInGame";
+            this.playerInGame.Size = new System.Drawing.Size(146, 23);
+            this.playerInGame.TabIndex = 7;
+            this.playerInGame.Text = "Player in game: ";
+            this.playerInGame.UseVisualStyleBackColor = true;
+
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(1094, 628);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.button2);
+
             this.Controls.Add(this.GBStatus);
             this.Controls.Add(this.GBAction);
             this.Controls.Add(this.GBChat);
             this.Controls.Add(this.GBPlayers);
+
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -568,7 +641,13 @@
         private System.Windows.Forms.Button button1;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Button button2;
+
         private System.Windows.Forms.Timer timer1;
+
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Leave;
+        private System.Windows.Forms.Button playerInGame;
+
     }
 }
 

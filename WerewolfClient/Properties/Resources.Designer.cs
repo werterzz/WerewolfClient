@@ -122,7 +122,7 @@ namespace WerewolfClient.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -149,6 +149,16 @@ namespace WerewolfClient.Properties {
         internal static System.Drawing.Bitmap Icon_medium {
             get {
                 object obj = ResourceManager.GetObject("Icon_medium", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_monkey {
+            get {
+                object obj = ResourceManager.GetObject("Icon_monkey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
