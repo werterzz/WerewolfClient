@@ -327,9 +327,7 @@
             // 
             // GBChat
             // 
-            this.GBChat.Controls.Add(this.playerInGame);
             this.GBChat.Controls.Add(this.axWindowsMediaPlayer1);
-            this.GBChat.Controls.Add(this.button1);
             this.GBChat.Controls.Add(this.TbChatInput);
             this.GBChat.Controls.Add(this.TbChatBox);
             this.GBChat.Location = new System.Drawing.Point(551, 15);
@@ -343,9 +341,9 @@
             // 
             // playerInGame
             // 
-            this.playerInGame.Location = new System.Drawing.Point(214, 125);
+            this.playerInGame.Location = new System.Drawing.Point(1088, 161);
             this.playerInGame.Name = "playerInGame";
-            this.playerInGame.Size = new System.Drawing.Size(130, 33);
+            this.playerInGame.Size = new System.Drawing.Size(100, 33);
             this.playerInGame.TabIndex = 7;
             this.playerInGame.Text = "Player in game: ";
             this.playerInGame.UseVisualStyleBackColor = true;
@@ -361,7 +359,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(61, 358);
+            this.button1.Location = new System.Drawing.Point(1088, 254);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -392,9 +390,9 @@
             // 
             // htp_click
             // 
-            this.htp_click.Location = new System.Drawing.Point(1084, 41);
+            this.htp_click.Location = new System.Drawing.Point(1088, 38);
             this.htp_click.Name = "htp_click";
-            this.htp_click.Size = new System.Drawing.Size(104, 24);
+            this.htp_click.Size = new System.Drawing.Size(100, 30);
             this.htp_click.TabIndex = 9;
             this.htp_click.Text = "how to play";
             this.htp_click.UseVisualStyleBackColor = true;
@@ -403,9 +401,9 @@
             // 
             // Leave
             // 
-            this.Leave.Location = new System.Drawing.Point(1113, 71);
+            this.Leave.Location = new System.Drawing.Point(1088, 67);
             this.Leave.Name = "Leave";
-            this.Leave.Size = new System.Drawing.Size(75, 23);
+            this.Leave.Size = new System.Drawing.Size(100, 30);
             this.Leave.TabIndex = 6;
             this.Leave.Text = "Leave Game";
             this.Leave.UseVisualStyleBackColor = true;
@@ -414,9 +412,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1113, 129);
+            this.button3.Location = new System.Drawing.Point(1088, 125);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 30);
             this.button3.TabIndex = 5;
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = true;
@@ -425,9 +423,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1113, 100);
+            this.button2.Location = new System.Drawing.Point(1088, 96);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 30);
             this.button2.TabIndex = 4;
             this.button2.Text = "Sign Out";
             this.button2.UseVisualStyleBackColor = true;
@@ -563,8 +561,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WerewolfClient.Properties.Resources.Daytime;
             this.ClientSize = new System.Drawing.Size(1200, 650);
+            this.Controls.Add(this.playerInGame);
             this.Controls.Add(this.menu_click);
             this.Controls.Add(this.htp_click);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Leave);
             this.Controls.Add(this.GBStatus);
