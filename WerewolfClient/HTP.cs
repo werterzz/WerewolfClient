@@ -51,188 +51,186 @@ namespace WerewolfClient
                 Application.Exit();
             }
         }
-
-        private void Werewolf_btn_Click(object sender, EventArgs e)
+        //
+        private void Werewolf_btn_Hove(object sender, EventArgs e)
         {
-            if (button3.Visible == false)
-            {
-                button3.Visible = true;
-            }
-            else
-            {
-                button3.Visible = false;
-            }
+            button3.Visible = true;
         }
 
-        private void Vilager_btn_Click(object sender, EventArgs e)
+        private void Werewolf_btn_Leave(object sender, EventArgs e)
         {
-            if (button13.Visible == false)
-            {
-                button13.Visible = true;
-            }
-            else
-            {
-                button13.Visible = false;
-            }
+            button3.Visible = false;
+        }
+        //
+
+        //
+        private void Vilager_btn_Hove(object sender, EventArgs e)
+        {
+            button13.Visible = true;
         }
 
-        private void AuraSeer_btn_Click(object sender, EventArgs e)
+        private void Vilager_btn_Leave(object sender, EventArgs e)
         {
-            if (button12.Visible == false)
-            {
-                button12.Visible = true;
-            }
-            else
-            {
-                button12.Visible = false;
-            }
+            button13.Visible = false;
+        }
+        //
+
+        //
+        private void AuraSeer_btn_Hove(object sender, EventArgs e)
+        {
+            button12.Visible = true;
         }
 
-        private void BodyGuard_btn_Click(object sender, EventArgs e)
+        private void AuraSeer_btn_Leave(object sender, EventArgs e)
         {
-            if (button11.Visible == false)
-            {
-                button11.Visible = true;
-            }
-            else
-            {
-                button11.Visible = false;
-            }
+            button12.Visible = false;
+        }
+        //
+
+
+        //
+        private void BodyGuard_btn_Hove(object sender, EventArgs e)
+        {
+            button11.Visible = true;
         }
 
-        private void Doctor_btn_Click(object sender, EventArgs e)
+        private void BodyGuard_btn_Leave(object sender, EventArgs e)
         {
-            if (button10.Visible == false)
-            {
-                button10.Visible = true;
-            }
-            else
-            {
-                button10.Visible = false;
-            }
+            button11.Visible = false;
+        }
+        //
+
+        //
+        private void Doctor_btn_Hove(object sender, EventArgs e)
+        {
+            button10.Visible = true;
         }
 
-        private void fool_btn_Click(object sender, EventArgs e)
+        private void Doctor_btn_Leave(object sender, EventArgs e)
         {
-            if (button9.Visible == false)
-            {
-                button9.Visible = true;
-            }
-            else
-            {
-                button9.Visible = false;
-            }
+            button10.Visible = false;
+        }
+        //
+
+        //
+        private void fool_btn_Hove(object sender, EventArgs e)
+        {
+            button9.Visible = true;
         }
 
-        private void Gunner_btn_Click(object sender, EventArgs e)
+        private void fool_btn_Leave(object sender, EventArgs e)
         {
-            if (button8.Visible == false)
-            {
-                button8.Visible = true;
-            }
-            else
-            {
-                button8.Visible = false;
-            }
+            button9.Visible = false;
+        }
+        //
+
+        //
+        private void Gunner_btn_Hove(object sender, EventArgs e)
+        {
+            button8.Visible = true;
         }
 
-        private void Jailer_btn_Click(object sender, EventArgs e)
+        private void Gunner_btn_Leave(object sender, EventArgs e)
         {
-            if (button7.Visible == false)
-            {
-                button7.Visible = true;
-            }
-            else
-            {
-                button7.Visible = false;
-            }
+            button8.Visible = false;
+        }
+        //
+
+        //
+        private void Jailer_btn_Hove(object sender, EventArgs e)
+        {
+            button7.Visible = true;
         }
 
-        private void medium_btn_Click(object sender, EventArgs e)
+        private void Jailer_btn_Leave(object sender, EventArgs e)
         {
-            if (button6.Visible == false)
-            {
-                button6.Visible = true;
-            }
-            else
-            {
-                button6.Visible = false;
-            }
+            button7.Visible = false;
+        }
+        //
+
+        //
+        private void medium_btn_Hove(object sender, EventArgs e)
+        {
+            button6.Visible = true;
         }
 
-        private void Priest_btn_Click(object sender, EventArgs e)
+        private void medium_btn_Leave(object sender, EventArgs e)
         {
-            if (button5.Visible == false)
-            {
-                button5.Visible = true;
-            }
-            else
-            {
-                button5.Visible = false;
-            }
+            button6.Visible = false;
+        }
+        //
+
+        //
+        private void Priest_btn_Hove(object sender, EventArgs e)
+        {
+            button5.Visible = true;
         }
 
-        private void Seer_btn_Click(object sender, EventArgs e)
+        private void Priest_btn_Leave(object sender, EventArgs e)
         {
-            if (button4.Visible == false)
-            {
-                button4.Visible = true;
-            }
-            else
-            {
-                button4.Visible = false;
-            }
+            button5.Visible = false;
+        }
+        //
+
+        //
+        private void Seer_btn_Hove(object sender, EventArgs e)
+        {
+            button4.Visible = true;
         }
 
-        private void SerailKiller_btn_Click(object sender, EventArgs e)
+        private void Seer_btn_Leave(object sender, EventArgs e)
         {
-            if (button16.Visible == false)
-            {
-                button16.Visible = true;
-            }
-            else
-            {
-                button16.Visible = false;
-            }
+            button4.Visible = false;
+        }
+        //
+
+        //
+        private void SerailKiller_btn_Hove(object sender, EventArgs e)
+        {
+            button16.Visible = true;
         }
 
-        private void WolfSeer_btn_Click(object sender, EventArgs e)
+        private void SerailKiller_btn_Leave(object sender, EventArgs e)
         {
-            if (button15.Visible == false)
-            {
-                button15.Visible = true;
-            }
-            else
-            {
-                button15.Visible = false;
-            }
+            button16.Visible = false;
+        }
+        //
+
+        //
+        private void WolfSeer_btn_Hove(object sender, EventArgs e)
+        {
+            button15.Visible = true;
         }
 
-        private void WolfShaman_btn_Click(object sender, EventArgs e)
+        private void WolfSeer_btn_Leave(object sender, EventArgs e)
         {
-            if (button14.Visible == false)
-            {
-                button14.Visible = true;
-            }
-            else
-            {
+            button15.Visible = false;
+        }
+        //
 
-                button14.Visible = false;
-            }
+        //
+        private void WolfShaman_btn_Hove(object sender, EventArgs e)
+        {
+            button14.Visible = true;
         }
 
-        private void AlphaWolf_btn_Click(object sender, EventArgs e)
+        private void WolfShaman_btn_Leave(object sender, EventArgs e)
         {
-            if (button17.Visible == false)
-            {
-                button17.Visible = true;
-            }
-            else
-            {
-                button17.Visible = false;
-            }
+            button14.Visible = false;
+        }
+        //
+
+        //
+        private void AlphaWolf_btn_Hove(object sender, EventArgs e)
+        {
+            button17.Visible = true;
         }
 
+        private void AlphaWolf_btn_Leave(object sender, EventArgs e)
+        {
+            button17.Visible = false;
+        }
+        //
 
     }
 }

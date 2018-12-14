@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HTP));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -113,7 +114,8 @@
             this.Werewolf_btn.TabIndex = 6;
             this.Werewolf_btn.Text = "Werewolf";
             this.Werewolf_btn.UseVisualStyleBackColor = true;
-            this.Werewolf_btn.Click += new System.EventHandler(this.Werewolf_btn_Click);
+            this.Werewolf_btn.MouseLeave += new System.EventHandler(this.Werewolf_btn_Leave);
+            this.Werewolf_btn.MouseHover += new System.EventHandler(this.Werewolf_btn_Hove);
             // 
             // Vilager_btn
             // 
@@ -123,7 +125,8 @@
             this.Vilager_btn.TabIndex = 7;
             this.Vilager_btn.Text = "Villager";
             this.Vilager_btn.UseVisualStyleBackColor = true;
-            this.Vilager_btn.Click += new System.EventHandler(this.Vilager_btn_Click);
+            this.Vilager_btn.MouseLeave += new System.EventHandler(this.Vilager_btn_Leave);
+            this.Vilager_btn.MouseHover += new System.EventHandler(this.Vilager_btn_Hove);
             // 
             // AuraSeer_btn
             // 
@@ -133,7 +136,8 @@
             this.AuraSeer_btn.TabIndex = 8;
             this.AuraSeer_btn.Text = "Aura Seer";
             this.AuraSeer_btn.UseVisualStyleBackColor = true;
-            this.AuraSeer_btn.Click += new System.EventHandler(this.AuraSeer_btn_Click);
+            this.AuraSeer_btn.MouseLeave += new System.EventHandler(this.AuraSeer_btn_Leave);
+            this.AuraSeer_btn.MouseHover += new System.EventHandler(this.AuraSeer_btn_Hove);
             // 
             // BodyGuard_btn
             // 
@@ -143,7 +147,8 @@
             this.BodyGuard_btn.TabIndex = 9;
             this.BodyGuard_btn.Text = "BodyGuard";
             this.BodyGuard_btn.UseVisualStyleBackColor = true;
-            this.BodyGuard_btn.Click += new System.EventHandler(this.BodyGuard_btn_Click);
+            this.BodyGuard_btn.MouseLeave += new System.EventHandler(this.BodyGuard_btn_Leave);
+            this.BodyGuard_btn.MouseHover += new System.EventHandler(this.BodyGuard_btn_Hove);
             // 
             // Doctor_btn
             // 
@@ -153,7 +158,8 @@
             this.Doctor_btn.TabIndex = 10;
             this.Doctor_btn.Text = "Doctor";
             this.Doctor_btn.UseVisualStyleBackColor = true;
-            this.Doctor_btn.Click += new System.EventHandler(this.Doctor_btn_Click);
+            this.Doctor_btn.MouseLeave += new System.EventHandler(this.Doctor_btn_Leave);
+            this.Doctor_btn.MouseHover += new System.EventHandler(this.Doctor_btn_Hove);
             // 
             // fool_btn
             // 
@@ -163,7 +169,8 @@
             this.fool_btn.TabIndex = 11;
             this.fool_btn.Text = "fool";
             this.fool_btn.UseVisualStyleBackColor = true;
-            this.fool_btn.Click += new System.EventHandler(this.fool_btn_Click);
+            this.fool_btn.MouseLeave += new System.EventHandler(this.fool_btn_Leave);
+            this.fool_btn.MouseHover += new System.EventHandler(this.fool_btn_Hove);
             // 
             // Gunner_btn
             // 
@@ -173,7 +180,8 @@
             this.Gunner_btn.TabIndex = 12;
             this.Gunner_btn.Text = "Gunner";
             this.Gunner_btn.UseVisualStyleBackColor = true;
-            this.Gunner_btn.Click += new System.EventHandler(this.Gunner_btn_Click);
+            this.Gunner_btn.MouseLeave += new System.EventHandler(this.Gunner_btn_Leave);
+            this.Gunner_btn.MouseHover += new System.EventHandler(this.Gunner_btn_Hove);
             // 
             // medium_btn
             // 
@@ -183,7 +191,8 @@
             this.medium_btn.TabIndex = 13;
             this.medium_btn.Text = "Medium";
             this.medium_btn.UseVisualStyleBackColor = true;
-            this.medium_btn.Click += new System.EventHandler(this.medium_btn_Click);
+            this.medium_btn.MouseLeave += new System.EventHandler(this.medium_btn_Leave);
+            this.medium_btn.MouseHover += new System.EventHandler(this.medium_btn_Hove);
             // 
             // Seer_btn
             // 
@@ -193,7 +202,8 @@
             this.Seer_btn.TabIndex = 14;
             this.Seer_btn.Text = "Seer";
             this.Seer_btn.UseVisualStyleBackColor = true;
-            this.Seer_btn.Click += new System.EventHandler(this.Seer_btn_Click);
+            this.Seer_btn.MouseLeave += new System.EventHandler(this.Seer_btn_Leave);
+            this.Seer_btn.MouseHover += new System.EventHandler(this.Seer_btn_Hove);
             // 
             // Jailer_btn
             // 
@@ -203,7 +213,8 @@
             this.Jailer_btn.TabIndex = 15;
             this.Jailer_btn.Text = "Jailer";
             this.Jailer_btn.UseVisualStyleBackColor = true;
-            this.Jailer_btn.Click += new System.EventHandler(this.Jailer_btn_Click);
+            this.Jailer_btn.MouseLeave += new System.EventHandler(this.Jailer_btn_Leave);
+            this.Jailer_btn.MouseHover += new System.EventHandler(this.Jailer_btn_Hove);
             // 
             // Priest_btn
             // 
@@ -213,7 +224,8 @@
             this.Priest_btn.TabIndex = 16;
             this.Priest_btn.Text = "Priest";
             this.Priest_btn.UseVisualStyleBackColor = true;
-            this.Priest_btn.Click += new System.EventHandler(this.Priest_btn_Click);
+            this.Priest_btn.MouseLeave += new System.EventHandler(this.Priest_btn_Leave);
+            this.Priest_btn.MouseHover += new System.EventHandler(this.Priest_btn_Hove);
             // 
             // AlphaWolf_btn
             // 
@@ -223,7 +235,8 @@
             this.AlphaWolf_btn.TabIndex = 17;
             this.AlphaWolf_btn.Text = "Alpha Wolf";
             this.AlphaWolf_btn.UseVisualStyleBackColor = true;
-            this.AlphaWolf_btn.Click += new System.EventHandler(this.AlphaWolf_btn_Click);
+            this.AlphaWolf_btn.MouseLeave += new System.EventHandler(this.AlphaWolf_btn_Leave);
+            this.AlphaWolf_btn.MouseHover += new System.EventHandler(this.AlphaWolf_btn_Hove);
             // 
             // WolfShaman_btn
             // 
@@ -233,7 +246,8 @@
             this.WolfShaman_btn.TabIndex = 18;
             this.WolfShaman_btn.Text = "Wolf Shaman";
             this.WolfShaman_btn.UseVisualStyleBackColor = true;
-            this.WolfShaman_btn.Click += new System.EventHandler(this.WolfShaman_btn_Click);
+            this.WolfShaman_btn.MouseLeave += new System.EventHandler(this.WolfShaman_btn_Leave);
+            this.WolfShaman_btn.MouseHover += new System.EventHandler(this.WolfShaman_btn_Hove);
             // 
             // WolfSeer_btn
             // 
@@ -243,7 +257,8 @@
             this.WolfSeer_btn.TabIndex = 19;
             this.WolfSeer_btn.Text = "Wolf Seer";
             this.WolfSeer_btn.UseVisualStyleBackColor = true;
-            this.WolfSeer_btn.Click += new System.EventHandler(this.WolfSeer_btn_Click);
+            this.WolfSeer_btn.MouseLeave += new System.EventHandler(this.WolfSeer_btn_Leave);
+            this.WolfSeer_btn.MouseHover += new System.EventHandler(this.WolfSeer_btn_Hove);
             // 
             // SerailKiller_btn
             // 
@@ -253,7 +268,8 @@
             this.SerailKiller_btn.TabIndex = 20;
             this.SerailKiller_btn.Text = "Serial Killer";
             this.SerailKiller_btn.UseVisualStyleBackColor = true;
-            this.SerailKiller_btn.Click += new System.EventHandler(this.SerailKiller_btn_Click);
+            this.SerailKiller_btn.MouseLeave += new System.EventHandler(this.SerailKiller_btn_Leave);
+            this.SerailKiller_btn.MouseHover += new System.EventHandler(this.SerailKiller_btn_Hove);
             // 
             // button18
             // 
@@ -437,6 +453,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(224, 93);
             this.button7.TabIndex = 40;
+            this.button7.Text = resources.GetString("button7.Text");
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Visible = false;
             // 

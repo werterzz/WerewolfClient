@@ -145,7 +145,5 @@ namespace WerewolfClient
             Environment.Exit(0);
         }
 
-      
-
     }
 }

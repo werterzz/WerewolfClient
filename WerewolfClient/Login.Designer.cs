@@ -43,7 +43,9 @@ namespace WerewolfClient
             this.button1 = new System.Windows.Forms.Button();
             this.BtnSignup = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -130,9 +132,10 @@ namespace WerewolfClient
             // 
             // sound
             // 
-            this.sound.Location = new System.Drawing.Point(468, 483);
+            this.sound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sound.Location = new System.Drawing.Point(6, 3);
             this.sound.Name = "sound";
-            this.sound.Size = new System.Drawing.Size(75, 23);
+            this.sound.Size = new System.Drawing.Size(88, 34);
             this.sound.TabIndex = 9;
             this.sound.Text = "sound";
             this.sound.UseVisualStyleBackColor = true;
@@ -140,9 +143,9 @@ namespace WerewolfClient
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(915, 177);
+            this.button1.Location = new System.Drawing.Point(100, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 28);
+            this.button1.Size = new System.Drawing.Size(65, 34);
             this.button1.TabIndex = 10;
             this.button1.Text = "exit";
             this.button1.UseVisualStyleBackColor = true;
@@ -161,14 +164,25 @@ namespace WerewolfClient
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(650, 175);
+            this.pictureBox1.Location = new System.Drawing.Point(749, 212);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 114);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(64, 53);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.VisibleChanged += new System.EventHandler(this.Login_Load_1);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.sound);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1521, 12);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(168, 41);
+            this.flowLayoutPanel1.TabIndex = 12;
             // 
             // Login
             // 
@@ -177,8 +191,6 @@ namespace WerewolfClient
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1701, 808);
             this.Controls.Add(this.BtnSignup);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.sound);
             this.Controls.Add(this.TBServer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -187,9 +199,11 @@ namespace WerewolfClient
             this.Controls.Add(this.TbLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -199,6 +213,7 @@ namespace WerewolfClient
             this.VisibleChanged += new System.EventHandler(this.Login_Load_1);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,7 +233,7 @@ namespace WerewolfClient
         private System.Windows.Forms.Button button1;
 
         private System.Windows.Forms.Button BtnSignup;
-
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
     partial class WinApI
     {
