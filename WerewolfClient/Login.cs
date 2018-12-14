@@ -30,8 +30,12 @@ namespace WerewolfClient
                     case WerewolfModel.EventEnum.SignIn:
                         if (wm.EventPayloads["Success"] == "True")
                         {
-                            _mainForm.Visible = true;
                             this.Visible = false;
+                            Menu mMenu = new Menu(_mainForm);
+                            if(_mainForm.Visible == false)
+                            {
+                                mMenu.Show();
+                            }
                         }
                         else
                         {
@@ -100,5 +104,36 @@ namespace WerewolfClient
             controller.ActionPerformed(wcmd);
 
         }
+        private void Login_Load_1(object sender, EventArgs e)
+        {
+            WinApI.AnimateWindow(this.Handle, 2000, WinApI.BLEND);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+                timer1.Stop();
+                Application.Exit();
+            }
+        }
+        private void Register_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            string sever = TBServer.Text;
+            register frm = new register(this, sever);
+            frm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+      
     }
 }

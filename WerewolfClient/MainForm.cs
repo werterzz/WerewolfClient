@@ -246,11 +246,13 @@ namespace WerewolfClient
 
 
                     case EventEnum.SwitchToDayTime:
+                        timer2.Start();
                         AddChatMessage("Switch to day time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Day;
                         LBPeriod.Text = "Day time of";
                         break;
                     case EventEnum.SwitchToNightTime:
+                        timer3.Start();
                         AddChatMessage("Switch to night time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Night;
                         LBPeriod.Text = "Night time of";
@@ -495,7 +497,7 @@ namespace WerewolfClient
         {
             //backGround_sound.controls.play();
             Choices commands = new Choices();
-
+            WinApI.AnimateWindow(this.Handle, 1500, WinApI.BLEND);
             commands.Add(new string[] { "say hello", "print my name", "kill", "vote",
             "player0", "player1", "player2", "player3", "player4" , "player5", "player6", "player7", "player8", "player9",
             "player10", "player11", "player12", "player13", "player14", "player15", "I am wolf", "I am villager", "wolf is "});
@@ -822,6 +824,59 @@ namespace WerewolfClient
 
 
 
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+
+                timer2.Stop();
+                this.BackgroundImage = Properties.Resources.Daytime;
+            }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+
+                timer3.Stop();
+                this.BackgroundImage = Properties.Resources.Nighttime;
+            }
+        }
+
+        private void htp_click_Click(object sender, EventArgs e)
+        {
+            HTP htp = new HTP(this);
+            this.Visible = false;
+            htp.Visible = true;
+        }
+
+        private void menu_click_Click(object sender, EventArgs e)
+        {
+            if (htp_click.Visible == false && Leave.Visible == false)
+            {
+                htp_click.Visible = true;
+                Leave.Visible = true;
+                button2.Visible = true;
+                button3.Visible = true;
+            }
+            else
+            {
+                htp_click.Visible = false;
+                Leave.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+            }
         }
     }
 }

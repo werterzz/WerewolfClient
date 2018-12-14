@@ -1,4 +1,7 @@
-﻿namespace WerewolfClient
+﻿using System;
+using System.Runtime.InteropServices;
+
+namespace WerewolfClient
 {
     partial class Login
     {
@@ -28,6 +31,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +43,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TBServer = new System.Windows.Forms.TextBox();
             this.sound = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +113,7 @@
             this.BtnSignUp.TabIndex = 5;
             this.BtnSignUp.Text = "Sign Up";
             this.BtnSignUp.UseVisualStyleBackColor = true;
-            this.BtnSignUp.Click += new System.EventHandler(this.BtnSignUp_Click);
+            this.BtnSignUp.Click += new System.EventHandler(this.Register_Click);
             // 
             // pictureBox1
             // 
@@ -153,11 +159,26 @@
             this.sound.UseVisualStyleBackColor = true;
             this.sound.Click += new System.EventHandler(this.sound_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(497, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(58, 28);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 404);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.sound);
             this.Controls.Add(this.TBServer);
             this.Controls.Add(this.label3);
@@ -171,6 +192,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load_1);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -190,5 +212,20 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TBServer;
         private System.Windows.Forms.Button sound;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button1;
+    }
+    partial class WinApI
+    {
+        public const int HOR_Positive = 0X1;
+        public const int HOR_Negative = 0X2;
+        public const int VER_Postiive = 0X4;
+        public const int VER_Negative = 0x8;
+        public const int CENTER = 0X10;
+        public const int BLEND = 0X80000;
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int AnimateWindow(IntPtr hwand, int dwTime, int dwFlag);
+
+
     }
 }
