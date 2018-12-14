@@ -67,6 +67,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menu_click = new System.Windows.Forms.Button();
+            this.joinIdTextEnter = new System.Windows.Forms.TextBox();
             this.GBPlayers.SuspendLayout();
             this.GBChat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -349,6 +350,7 @@
             this.playerInGame.TabIndex = 7;
             this.playerInGame.Text = "Player in game: ";
             this.playerInGame.UseVisualStyleBackColor = true;
+            this.playerInGame.Click += new System.EventHandler(this.ShowGameList);
             // 
             // axWindowsMediaPlayer1
             // 
@@ -557,12 +559,20 @@
             this.menu_click.UseVisualStyleBackColor = true;
             this.menu_click.Click += new System.EventHandler(this.menu_click_Click);
             // 
+            // joinIdTextEnter
+            // 
+            this.joinIdTextEnter.Location = new System.Drawing.Point(1072, 362);
+            this.joinIdTextEnter.Name = "joinIdTextEnter";
+            this.joinIdTextEnter.Size = new System.Drawing.Size(51, 22);
+            this.joinIdTextEnter.TabIndex = 11;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WerewolfClient.Properties.Resources.Daytime;
             this.ClientSize = new System.Drawing.Size(1200, 650);
+            this.Controls.Add(this.joinIdTextEnter);
             this.Controls.Add(this.menu_click);
             this.Controls.Add(this.htp_click);
             this.Controls.Add(this.button2);
@@ -588,6 +598,7 @@
             this.GBStatus.ResumeLayout(false);
             this.GBStatus.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -631,7 +642,7 @@
         private System.Windows.Forms.Button playerInGame;
         private System.Windows.Forms.Button htp_click;
         private System.Windows.Forms.Button menu_click;
-
+        private System.Windows.Forms.TextBox joinIdTextEnter;
     }
 }
 

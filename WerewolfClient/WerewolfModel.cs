@@ -40,6 +40,8 @@ namespace WerewolfClient
         public const string FALSE = "False";
         private long? latestChatId = 0;
 
+        public List<Game> gameList = null;
+
 
         public enum EventEnum
         {
@@ -63,7 +65,8 @@ namespace WerewolfClient
             SignOut = 18,
             LeaveGame = 19,
             Soundbackground = 20,
-            GameWaiting = 21
+            GameWaiting = 21,
+            GameList = 22
         }
         public const string ROLE_SEER = "Seer";
         public const string ROLE_AURA_SEER = "Aura Seer";
@@ -337,6 +340,7 @@ namespace WerewolfClient
             }
         }
 
+
         public void JoinGame()
         {
             if (_player == null)
@@ -466,6 +470,16 @@ namespace WerewolfClient
         {
             _event = EventEnum.Soundbackground;
             NotifyAll();
+        }
+        public void GameList()
+        {
+             gameList = _gameEP.GameGet();
+            _event = EventEnum.GameList;
+            NotifyAll();
+        }
+        public void JoinGameById()
+        {
+
         }
 
         public void Vote(string target)

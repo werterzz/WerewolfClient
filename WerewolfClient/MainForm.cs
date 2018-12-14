@@ -37,6 +37,7 @@ namespace WerewolfClient
         private System.Windows.Forms.Timer timer1;
         private int counter = 2; //for timer sound
         private int playerCounter = 0; //for counter player in GameWaiting
+        private bool IsJoinID; // for check join id game
 
         public MainForm()
         {
@@ -245,6 +246,7 @@ namespace WerewolfClient
                             }
                             playerCounter = wm.Players.Count;
                         }
+
                         break;
 
 
@@ -365,6 +367,16 @@ namespace WerewolfClient
                         EnableButton(BtnJoin, true);
                         TbChatBox.Text = "";
                         break;
+                    case EventEnum.GameList:
+                        foreach(Game list_game in wm.gameList)
+                        {
+                            if(list_game.Status.ToString() == "Waiting")
+                            {
+                                AddChatMessage(list_game.Id.ToString());
+                            }
+                            
+                        }
+                        break;
                 }
                 // need to reset event
                 wm.Event = EventEnum.NOP;
@@ -469,6 +481,23 @@ namespace WerewolfClient
                 wcmd.Payloads = new Dictionary<string, string>() { { "Message", TbChatInput.Text } };
                 TbChatInput.Text = "";
                 controller.ActionPerformed(wcmd);
+            }
+            if (e.KeyCode == Keys.Return && TbChatInput.Text != "" && IsJoinID == true)
+            {
+                try
+                {
+                    WerewolfCommand wcmd = new WerewolfCommand();
+                    wcmd.Action = CommandEnum.JoinGameByIdGame;
+                    
+                    controller.ActionPerformed(wcmd);
+                }
+                catch(Exception ex)
+                {
+                    WerewolfCommand wcmd = new WerewolfCommand();
+                    wcmd.Payloads = new Dictionary<string, string>() { { "Message", TbChatInput.Text } };
+                    TbChatInput.Text = "";
+                }
+                
             }
         }
 
@@ -862,5 +891,13 @@ namespace WerewolfClient
             }
 
         }
+        private void ShowGameList(object sender, EventArgs e)
+        {
+            WerewolfCommand wcmd = new WerewolfCommand();
+            wcmd.Action = CommandEnum.GameList;
+            controller.ActionPerformed(wcmd);
+        }
+
+
     }
 }

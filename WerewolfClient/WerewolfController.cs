@@ -19,7 +19,9 @@ namespace WerewolfClient
             Vote = 7,
             Action = 8,
             Chat = 9,
-            SoundBackground = 10
+            SoundBackground = 10,
+            GameList = 11,
+            JoinGameByIdGame = 12
         };
         public new CommandEnum Action { get; set; }
     }
@@ -82,6 +84,12 @@ namespace WerewolfClient
                             break;
                         case WerewolfCommand.CommandEnum.SoundBackground:
                             wm.SoundBackground();
+                            break;
+                        case WerewolfCommand.CommandEnum.GameList:
+                            wm.GameList();
+                            break;
+                        case WerewolfCommand.CommandEnum.JoinGameByIdGame:
+                            wm.JoinGameById();
                             break;
                     }
                 }
