@@ -48,7 +48,8 @@
             this.BtnPlayer1 = new System.Windows.Forms.Button();
             this.BtnPlayer0 = new System.Windows.Forms.Button();
             this.GBChat = new System.Windows.Forms.GroupBox();
-
+            this.htp_click = new System.Windows.Forms.Button();
+            this.playerInGame = new System.Windows.Forms.Button();
             this.Leave = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -67,11 +68,9 @@
             this.LBPeriod = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-
-            this.button2 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-
-            this.playerInGame = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.menu_click = new System.Windows.Forms.Button();
 
             this.GBPlayers.SuspendLayout();
             this.GBChat.SuspendLayout();
@@ -333,11 +332,7 @@
             // 
             // GBChat
             // 
-
             this.GBChat.Controls.Add(this.playerInGame);
-            this.GBChat.Controls.Add(this.Leave);
-            this.GBChat.Controls.Add(this.button3);
-            this.GBChat.Controls.Add(this.button2);
             this.GBChat.Controls.Add(this.axWindowsMediaPlayer1);
 
             this.GBChat.Controls.Add(this.button1);
@@ -352,60 +347,78 @@
             this.GBChat.TabStop = false;
             this.GBChat.Text = "Chat";
             // 
-
-            // axWindowsMediaPlayer1
+            // htp_click
             // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(967, 585);
-
+            this.htp_click.Location = new System.Drawing.Point(1084, 41);
+            this.htp_click.Name = "htp_click";
+            this.htp_click.Size = new System.Drawing.Size(104, 24);
+            this.htp_click.TabIndex = 9;
+            this.htp_click.Text = "how to play";
+            this.htp_click.UseVisualStyleBackColor = true;
+            this.htp_click.Visible = false;
+            this.htp_click.Click += new System.EventHandler(this.htp_click_Click);
+            // 
+            // playerInGame
+            // 
+            this.playerInGame.Location = new System.Drawing.Point(214, 125);
+            this.playerInGame.Name = "playerInGame";
+            this.playerInGame.Size = new System.Drawing.Size(130, 33);
+            this.playerInGame.TabIndex = 7;
+            this.playerInGame.Text = "Player in game: ";
+            this.playerInGame.UseVisualStyleBackColor = true;
+            // 
             // Leave
             // 
-            this.Leave.Location = new System.Drawing.Point(214, 312);
+            this.Leave.Location = new System.Drawing.Point(1113, 71);
+
             this.Leave.Name = "Leave";
             this.Leave.Size = new System.Drawing.Size(75, 23);
             this.Leave.TabIndex = 6;
             this.Leave.Text = "Leave Game";
             this.Leave.UseVisualStyleBackColor = true;
+            this.Leave.Visible = false;
+
             this.Leave.Click += new System.EventHandler(this.Leave_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(383, 262);
+            this.button3.Location = new System.Drawing.Point(1113, 129);
+
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 5;
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+
             this.button3.Click += new System.EventHandler(this.Exit_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(241, 434);
+            this.button2.Location = new System.Drawing.Point(1113, 100);
+
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
             this.button2.Text = "Sign Out";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+
             this.button2.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // axWindowsMediaPlayer1
             // 
-
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(362, 39);
 
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
             this.axWindowsMediaPlayer1.TabIndex = 3;
-
-            this.axWindowsMediaPlayer1.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(44, 485);
-
-            // 
-            // button1
-            // 
+            this.button1.Location = new System.Drawing.Point(61, 358);
 
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -548,45 +561,41 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Day #";
             // 
-
-            // button2
+            // timer2
             // 
-            this.button2.Location = new System.Drawing.Point(1025, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 24);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "leave";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // timer1
+            // timer3
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-
-            // playerInGame
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            this.playerInGame.Location = new System.Drawing.Point(143, 130);
-            this.playerInGame.Name = "playerInGame";
-            this.playerInGame.Size = new System.Drawing.Size(146, 23);
-            this.playerInGame.TabIndex = 7;
-            this.playerInGame.Text = "Player in game: ";
-            this.playerInGame.UseVisualStyleBackColor = true;
+            // menu_click
+            // 
+            this.menu_click.Location = new System.Drawing.Point(1113, 12);
+            this.menu_click.Name = "menu_click";
+            this.menu_click.Size = new System.Drawing.Size(75, 23);
+            this.menu_click.TabIndex = 10;
+            this.menu_click.Text = "menu";
+            this.menu_click.UseVisualStyleBackColor = true;
+            this.menu_click.Click += new System.EventHandler(this.menu_click_Click);
 
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.ClientSize = new System.Drawing.Size(1094, 628);
-            this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.BackgroundImage = global::WerewolfClient.Properties.Resources.Daytime;
+            this.ClientSize = new System.Drawing.Size(1200, 650);
+            this.Controls.Add(this.menu_click);
+            this.Controls.Add(this.htp_click);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.Leave);
 
             this.Controls.Add(this.GBStatus);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.GBAction);
             this.Controls.Add(this.GBChat);
             this.Controls.Add(this.GBPlayers);
-
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -641,12 +650,13 @@
         private System.Windows.Forms.Button button1;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Button button2;
-
-        private System.Windows.Forms.Timer timer1;
-
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button Leave;
         private System.Windows.Forms.Button playerInGame;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Button htp_click;
+        private System.Windows.Forms.Button menu_click;
 
     }
 }

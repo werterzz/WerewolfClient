@@ -34,7 +34,6 @@ namespace WerewolfClient
         private List<Player> players = null;
         SpeechRecognitionEngine recEngine = new SpeechRecognitionEngine();
         WindowsMediaPlayer backGround_sound = new WindowsMediaPlayer();
-
         private System.Windows.Forms.Timer timer1;
         private int counter = 2; //for timer sound
         private int playerCounter = 0; //for counter player in GameWaiting
@@ -250,11 +249,13 @@ namespace WerewolfClient
 
 
                     case EventEnum.SwitchToDayTime:
+                        timer2.Start();
                         AddChatMessage("Switch to day time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Day;
                         LBPeriod.Text = "Day time of";
                         break;
                     case EventEnum.SwitchToNightTime:
+                        timer3.Start();
                         AddChatMessage("Switch to night time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Night;
                         LBPeriod.Text = "Night time of";
@@ -497,13 +498,9 @@ namespace WerewolfClient
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-
-            WinApI.AnimateWindow(this.Handle, 2000, WinApI.BLEND);
-            backGround_sound.controls.play();
-
             //backGround_sound.controls.play();
-
             Choices commands = new Choices();
+            WinApI.AnimateWindow(this.Handle, 1500, WinApI.BLEND);
 
             commands.Add(new string[] { "say hello", "print my name", "kill", "vote",
             "player0", "player1", "player2", "player3", "player4" , "player5", "player6", "player7", "player8", "player9",
@@ -773,26 +770,6 @@ namespace WerewolfClient
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            timer1.Start();
-           
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-                if (this.Opacity > 0.0)
-                {
-                    this.Opacity -= 0.1;
-                }
-                else
-                {
-                    timer1.Stop();
-                    Application.Exit();
-                }
-            
-
         private void BtnLogout_Click(object sender, EventArgs e)
         {
             WerewolfCommand wcmd = new WerewolfCommand();
@@ -812,7 +789,8 @@ namespace WerewolfClient
             controller.ActionPerformed(wcmd);
 
         }
-        private void timer2_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
+
         {
             counter--;
             System.Console.WriteLine(counter);
@@ -848,12 +826,66 @@ namespace WerewolfClient
         {
             //int counter = 6;
             timer1 = new Timer();
-            timer1.Tick += new EventHandler(timer2_Tick);
+            timer1.Tick += new EventHandler(timer1_Tick);
+
             timer1.Interval = 10; // 1 second
             timer1.Start();
 
 
 
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+
+                timer2.Stop();
+                this.BackgroundImage = Properties.Resources.Daytime;
+            }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+
+                timer3.Stop();
+                this.BackgroundImage = Properties.Resources.Nighttime;
+            }
+        }
+
+        private void htp_click_Click(object sender, EventArgs e)
+        {
+            HTP htp = new HTP(this);
+            this.Visible = false;
+            htp.Visible = true;
+        }
+
+        private void menu_click_Click(object sender, EventArgs e)
+        {
+            if (htp_click.Visible == false && Leave.Visible == false)
+            {
+                htp_click.Visible = true;
+                Leave.Visible = true;
+                button2.Visible = true;
+                button3.Visible = true;
+            }
+            else
+            {
+                htp_click.Visible = false;
+                Leave.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+            }
 
         }
     }
