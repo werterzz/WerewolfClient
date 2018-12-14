@@ -37,15 +37,18 @@ namespace WerewolfClient
         private System.Windows.Forms.Timer timer1;
         private int counter = 2; //for timer sound
         private int playerCounter = 0; //for counter player in GameWaiting
+
         public MainForm()
         {
             InitializeComponent();
             backGround_sound.URL = "Fantasy_Game_Background_Looping.mp3";
+
             backGround_sound.settings.volume = 0;
             _isSound = true;
             backGround_sound.settings.setMode("loop", true);
 
             timer_time();
+
 
 
             foreach (int i in Enumerable.Range(0, 16))
@@ -498,6 +501,7 @@ namespace WerewolfClient
             //backGround_sound.controls.play();
             Choices commands = new Choices();
             WinApI.AnimateWindow(this.Handle, 1500, WinApI.BLEND);
+
             commands.Add(new string[] { "say hello", "print my name", "kill", "vote",
             "player0", "player1", "player2", "player3", "player4" , "player5", "player6", "player7", "player8", "player9",
             "player10", "player11", "player12", "player13", "player14", "player15", "I am wolf", "I am villager", "wolf is "});
@@ -515,6 +519,7 @@ namespace WerewolfClient
             recEngine.SetInputToDefaultAudioDevice();
 
             recEngine.SpeechRecognized += recEngine_SpeechRecognized;
+
         }
         /// <summary>
         /// voice chat command are used in voice button
@@ -763,6 +768,8 @@ namespace WerewolfClient
             }
 
         }
+
+
         private void BtnLogout_Click(object sender, EventArgs e)
         {
             WerewolfCommand wcmd = new WerewolfCommand();
@@ -783,6 +790,7 @@ namespace WerewolfClient
 
         }
         private void timer1_Tick(object sender, EventArgs e)
+
         {
             counter--;
             System.Console.WriteLine(counter);
@@ -819,6 +827,7 @@ namespace WerewolfClient
             //int counter = 6;
             timer1 = new Timer();
             timer1.Tick += new EventHandler(timer1_Tick);
+
             timer1.Interval = 10; // 1 second
             timer1.Start();
 
@@ -877,6 +886,7 @@ namespace WerewolfClient
                 button2.Visible = false;
                 button3.Visible = false;
             }
+
         }
     }
 }

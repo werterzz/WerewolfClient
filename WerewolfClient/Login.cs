@@ -14,6 +14,7 @@ namespace WerewolfClient
     {
         private WerewolfController controller;
         private Form _mainForm;
+        
         public Login(Form MainForm)
         {
             InitializeComponent();
@@ -28,8 +29,9 @@ namespace WerewolfClient
                 switch (wm.Event)
                 {
                     case WerewolfModel.EventEnum.SignIn:
-                        if (wm.EventPayloads["Success"] == "True")
+                        if (wm.EventPayloads["Success"] == "True" )
                         {
+
                             this.Visible = false;
                             Menu mMenu = new Menu(_mainForm);
                             if(_mainForm.Visible == false)
@@ -67,10 +69,13 @@ namespace WerewolfClient
 
         private void BtnSignIn_Click(object sender, EventArgs e)
         {
-            WerewolfCommand wcmd = new WerewolfCommand();
-            wcmd.Action = WerewolfCommand.CommandEnum.SignIn;
-            wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text }, { "Password", TbPassword.Text }, { "Server", TBServer.Text } };
-            controller.ActionPerformed(wcmd);
+            
+                WerewolfCommand wcmd = new WerewolfCommand();
+                wcmd.Action = WerewolfCommand.CommandEnum.SignIn;
+                wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text }, { "Password", TbPassword.Text }, { "Server", TBServer.Text } };
+                controller.ActionPerformed(wcmd);
+            
+            
         }
 
         private void BtnSignUp_Click(object sender, EventArgs e)
@@ -107,6 +112,7 @@ namespace WerewolfClient
         private void Login_Load_1(object sender, EventArgs e)
         {
             WinApI.AnimateWindow(this.Handle, 2000, WinApI.BLEND);
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -135,5 +141,6 @@ namespace WerewolfClient
         }
 
       
+
     }
 }
