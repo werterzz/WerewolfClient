@@ -216,6 +216,7 @@ namespace WerewolfClient
             }
             else
             {
+
                 button14.Visible = false;
             }
         }
