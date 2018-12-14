@@ -120,4 +120,7 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="button7.Text" xml:space="preserve">
+    <value> Can put any player in jail during the day. The night after, that player can't use their role ability and the jailer will be able to talk to their prisoner anonymously. Once every game, he can kill the prisoner.</value>
+  </data>
 </root>
