@@ -14,13 +14,15 @@ namespace WerewolfClient
     {
         private WerewolfController controller;
         private Form _mainForm;
-        
+        private register frm;
 
         public Login(Form MainForm)
         {
             InitializeComponent();
-            
-            
+            string sever = TBServer.Text;
+             frm = new register(this, sever);
+
+
             _mainForm = MainForm;
         }
 
@@ -50,7 +52,9 @@ namespace WerewolfClient
                     case WerewolfModel.EventEnum.SignUp:
                         if (wm.EventPayloads["Success"] == "True")
                         {
-                            MessageBox.Show("Sign up successfuly, please login", "Success", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            this.Visible = true;
+                            frm.Visible = false;
+
                         }
                         else
                         {
@@ -131,10 +135,9 @@ namespace WerewolfClient
         }
         private void Register_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            string sever = TBServer.Text;
-            register frm = new register(this, sever);
-            frm.Show();
+            this.Visible = false;        
+           
+            frm.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -23,7 +23,25 @@ namespace WerewolfClient
 
         public void Notify(Model m)
         {
-            throw new NotImplementedException();
+            WerewolfModel wm = (WerewolfModel)m;
+            switch (wm.Event)
+            {
+                
+                case WerewolfModel.EventEnum.SignUp:
+                    if (wm.EventPayloads["Success"] == "True")
+                    {
+
+                        this.Visible = false;
+                        _login.Visible = true;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login or password incorrect, please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    break;
+               
+            }
         }
 
         public void setController(Controller c)
@@ -33,8 +51,8 @@ namespace WerewolfClient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _login.Show();
-            this.Close();
+            _login.Visible =true;
+            this.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -46,6 +64,8 @@ namespace WerewolfClient
                 wcmd.Action = WerewolfCommand.CommandEnum.SignUp;
                 wcmd.Payloads = new Dictionary<string, string>() { { "Login", textBox1.Text }, { "Password", textBox2.Text }, { "Server", TBServer.Text } };
                 c.ActionPerformed(wcmd);
+                
+                
             }
             else
             {
