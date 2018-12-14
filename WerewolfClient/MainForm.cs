@@ -37,7 +37,6 @@ namespace WerewolfClient
         private System.Windows.Forms.Timer timer1;
         private int counter = 2; //for timer sound
         private int playerCounter = 0; //for counter player in GameWaiting
-        private bool IsJoinID; // for check join id game
 
         public MainForm()
         {
@@ -91,8 +90,10 @@ namespace WerewolfClient
             int i = 0;
             foreach (Player player in wm.Players)
             {
+
                 Controls["GBPlayers"].Controls["BtnPlayer" + i].Text = player.Name;
                 if (player.Name == wm.Player.Name || player.Status != Player.StatusEnum.Alive)
+                    
                 {
                     // FIXME, need to optimize this
                     Image img = Properties.Resources.Icon_villager;
@@ -246,7 +247,6 @@ namespace WerewolfClient
                             }
                             playerCounter = wm.Players.Count;
                         }
-
                         break;
 
 
@@ -254,11 +254,13 @@ namespace WerewolfClient
                         AddChatMessage("Switch to day time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Day;
                         LBPeriod.Text = "Day time of";
+                        this.BackgroundImage = Properties.Resources.Daytime;
                         break;
                     case EventEnum.SwitchToNightTime:
                         AddChatMessage("Switch to night time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Night;
                         LBPeriod.Text = "Night time of";
+                        this.BackgroundImage = Properties.Resources.Nighttime;
                         break;
                     case EventEnum.UpdateDay:
                         // TODO  catch parse exception here
@@ -309,6 +311,65 @@ namespace WerewolfClient
                     case EventEnum.ChatMessage:
                         if (wm.EventPayloads["Success"] == WerewolfModel.TRUE)
                         {
+                            for (int i = 0; i < wm.Players.Count; i++)
+                        {
+                            if (wm.EventPayloads["Game.Chatter"] == wm.Players[i].Name)
+                            {
+                                switch (i+1)
+                                {
+                                    case 1:textBox1.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 2:
+                                        textBox2.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 3:
+                                        textBox3.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 4:
+                                        textBox4.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 5:
+                                        textBox5.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 6:
+                                        textBox6.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 7:
+                                        textBox7.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 8:
+                                        textBox8.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 9:
+                                        textBox9.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 10:
+                                        textBox10.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 11:
+                                        textBox11.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 12:
+                                        textBox12.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 13:
+                                        textBox13.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 14:
+                                        textBox14.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 15:
+                                        textBox15.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+                                    case 16:
+                                        textBox16.Text = wm.EventPayloads["Game.ChatMessage"];
+                                        break;
+
+                                }
+                            }
+                        }
+                        
+                        
                             AddChatMessage(wm.EventPayloads["Game.Chatter"] + ":" + wm.EventPayloads["Game.ChatMessage"]);
                         }
                         break;
@@ -366,16 +427,6 @@ namespace WerewolfClient
                         }
                         EnableButton(BtnJoin, true);
                         TbChatBox.Text = "";
-                        break;
-                    case EventEnum.GameList:
-                        foreach(Game list_game in wm.gameList)
-                        {
-                            if(list_game.Status.ToString() == "Waiting")
-                            {
-                                AddChatMessage(list_game.Id.ToString());
-                            }
-                            
-                        }
                         break;
                 }
                 // need to reset event
@@ -481,23 +532,6 @@ namespace WerewolfClient
                 wcmd.Payloads = new Dictionary<string, string>() { { "Message", TbChatInput.Text } };
                 TbChatInput.Text = "";
                 controller.ActionPerformed(wcmd);
-            }
-            if (e.KeyCode == Keys.Return && TbChatInput.Text != "" && IsJoinID == true)
-            {
-                try
-                {
-                    WerewolfCommand wcmd = new WerewolfCommand();
-                    wcmd.Action = CommandEnum.JoinGameByIdGame;
-                    
-                    controller.ActionPerformed(wcmd);
-                }
-                catch(Exception ex)
-                {
-                    WerewolfCommand wcmd = new WerewolfCommand();
-                    wcmd.Payloads = new Dictionary<string, string>() { { "Message", TbChatInput.Text } };
-                    TbChatInput.Text = "";
-                }
-                
             }
         }
 
@@ -881,6 +915,7 @@ namespace WerewolfClient
                 Leave.Visible = true;
                 button2.Visible = true;
                 button3.Visible = true;
+                playerInGame.Visible = true;
             }
             else
             {
@@ -888,16 +923,11 @@ namespace WerewolfClient
                 Leave.Visible = false;
                 button2.Visible = false;
                 button3.Visible = false;
+                playerInGame.Visible = false;
+
             }
 
         }
-        private void ShowGameList(object sender, EventArgs e)
-        {
-            WerewolfCommand wcmd = new WerewolfCommand();
-            wcmd.Action = CommandEnum.GameList;
-            controller.ActionPerformed(wcmd);
-        }
-
 
     }
 }

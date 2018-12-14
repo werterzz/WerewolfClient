@@ -121,7 +121,6 @@
   <data name="Icon_head_hunter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_head_hunter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
   <data name="Icon_bodyguard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_bodyguard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -143,7 +142,6 @@
   <data name="Icon_aura_seer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_aura_seer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
   <data name="Icon_wolf_shaman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_wolf_shaman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -165,18 +163,16 @@
   <data name="Icon_werewolf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_werewolf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
   <data name="Icon_gunner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_gunner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon_wolf_seer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_wolf_seer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Daytime" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Daytime.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Nighttime" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nighttime.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-
+  </data>
+  <data name="Daytime" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Daytime.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
