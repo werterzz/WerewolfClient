@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.GBPlayers = new System.Windows.Forms.GroupBox();
             this.BtnPlayer15 = new System.Windows.Forms.Button();
@@ -48,16 +47,15 @@
             this.BtnPlayer1 = new System.Windows.Forms.Button();
             this.BtnPlayer0 = new System.Windows.Forms.Button();
             this.GBChat = new System.Windows.Forms.GroupBox();
-            this.htp_click = new System.Windows.Forms.Button();
             this.playerInGame = new System.Windows.Forms.Button();
-            this.Leave = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.button1 = new System.Windows.Forms.Button();
             this.TbChatInput = new System.Windows.Forms.TextBox();
             this.TbChatBox = new System.Windows.Forms.TextBox();
+            this.htp_click = new System.Windows.Forms.Button();
+            this.Leave = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.GBAction = new System.Windows.Forms.GroupBox();
             this.BtnJoin = new System.Windows.Forms.Button();
             this.BtnAction = new System.Windows.Forms.Button();
@@ -68,10 +66,7 @@
             this.LBPeriod = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.menu_click = new System.Windows.Forms.Button();
-
             this.GBPlayers.SuspendLayout();
             this.GBChat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -334,7 +329,6 @@
             // 
             this.GBChat.Controls.Add(this.playerInGame);
             this.GBChat.Controls.Add(this.axWindowsMediaPlayer1);
-
             this.GBChat.Controls.Add(this.button1);
             this.GBChat.Controls.Add(this.TbChatInput);
             this.GBChat.Controls.Add(this.TbChatBox);
@@ -347,17 +341,6 @@
             this.GBChat.TabStop = false;
             this.GBChat.Text = "Chat";
             // 
-            // htp_click
-            // 
-            this.htp_click.Location = new System.Drawing.Point(1084, 41);
-            this.htp_click.Name = "htp_click";
-            this.htp_click.Size = new System.Drawing.Size(104, 24);
-            this.htp_click.TabIndex = 9;
-            this.htp_click.Text = "how to play";
-            this.htp_click.UseVisualStyleBackColor = true;
-            this.htp_click.Visible = false;
-            this.htp_click.Click += new System.EventHandler(this.htp_click_Click);
-            // 
             // playerInGame
             // 
             this.playerInGame.Location = new System.Drawing.Point(214, 125);
@@ -367,50 +350,10 @@
             this.playerInGame.Text = "Player in game: ";
             this.playerInGame.UseVisualStyleBackColor = true;
             // 
-            // Leave
-            // 
-            this.Leave.Location = new System.Drawing.Point(1113, 71);
-
-            this.Leave.Name = "Leave";
-            this.Leave.Size = new System.Drawing.Size(75, 23);
-            this.Leave.TabIndex = 6;
-            this.Leave.Text = "Leave Game";
-            this.Leave.UseVisualStyleBackColor = true;
-            this.Leave.Visible = false;
-
-            this.Leave.Click += new System.EventHandler(this.Leave_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1113, 129);
-
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-
-            this.button3.Click += new System.EventHandler(this.Exit_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1113, 100);
-
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Sign Out";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-
-            this.button2.Click += new System.EventHandler(this.BtnLogout_Click);
-            // 
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(362, 39);
-
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
@@ -419,7 +362,6 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(61, 358);
-
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -447,6 +389,50 @@
             this.TbChatBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TbChatBox.Size = new System.Drawing.Size(471, 501);
             this.TbChatBox.TabIndex = 0;
+            // 
+            // htp_click
+            // 
+            this.htp_click.Location = new System.Drawing.Point(1084, 41);
+            this.htp_click.Name = "htp_click";
+            this.htp_click.Size = new System.Drawing.Size(104, 24);
+            this.htp_click.TabIndex = 9;
+            this.htp_click.Text = "how to play";
+            this.htp_click.UseVisualStyleBackColor = true;
+            this.htp_click.Visible = false;
+            this.htp_click.Click += new System.EventHandler(this.htp_click_Click);
+            // 
+            // Leave
+            // 
+            this.Leave.Location = new System.Drawing.Point(1113, 71);
+            this.Leave.Name = "Leave";
+            this.Leave.Size = new System.Drawing.Size(75, 23);
+            this.Leave.TabIndex = 6;
+            this.Leave.Text = "Leave Game";
+            this.Leave.UseVisualStyleBackColor = true;
+            this.Leave.Visible = false;
+            this.Leave.Click += new System.EventHandler(this.Leave_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1113, 129);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Exit";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1113, 100);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Sign Out";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // GBAction
             // 
@@ -561,14 +547,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Day #";
             // 
-            // timer2
-            // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // timer3
-            // 
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
             // menu_click
             // 
             this.menu_click.Location = new System.Drawing.Point(1113, 12);
@@ -578,7 +556,6 @@
             this.menu_click.Text = "menu";
             this.menu_click.UseVisualStyleBackColor = true;
             this.menu_click.Click += new System.EventHandler(this.menu_click_Click);
-
             // 
             // MainForm
             // 
@@ -590,18 +567,17 @@
             this.Controls.Add(this.htp_click);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Leave);
-
             this.Controls.Add(this.GBStatus);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.GBAction);
             this.Controls.Add(this.GBChat);
             this.Controls.Add(this.GBPlayers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Werewolf Client";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.GBPlayers.ResumeLayout(false);
@@ -653,8 +629,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button Leave;
         private System.Windows.Forms.Button playerInGame;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Button htp_click;
         private System.Windows.Forms.Button menu_click;
 

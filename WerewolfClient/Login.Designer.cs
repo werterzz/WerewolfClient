@@ -31,22 +31,18 @@ namespace WerewolfClient
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TbLogin = new System.Windows.Forms.TextBox();
             this.TbPassword = new System.Windows.Forms.TextBox();
             this.BtnSignIn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TBServer = new System.Windows.Forms.TextBox();
-
             this.sound = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.BtnSignup = new System.Windows.Forms.Button();
-
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,8 +50,7 @@ namespace WerewolfClient
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(92, 194);
-
+            this.label1.Location = new System.Drawing.Point(510, 354);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 29);
@@ -66,8 +61,7 @@ namespace WerewolfClient
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 246);
-
+            this.label2.Location = new System.Drawing.Point(463, 406);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 29);
@@ -77,8 +71,9 @@ namespace WerewolfClient
             // TbLogin
             // 
             this.TbLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbLogin.Location = new System.Drawing.Point(176, 194);
-
+            this.TbLogin.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TbLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TbLogin.Location = new System.Drawing.Point(594, 354);
             this.TbLogin.Margin = new System.Windows.Forms.Padding(4);
             this.TbLogin.Name = "TbLogin";
             this.TbLogin.Size = new System.Drawing.Size(363, 34);
@@ -88,8 +83,8 @@ namespace WerewolfClient
             // TbPassword
             // 
             this.TbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbPassword.Location = new System.Drawing.Point(176, 246);
-
+            this.TbPassword.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TbPassword.Location = new System.Drawing.Point(594, 406);
             this.TbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.PasswordChar = '*';
@@ -100,8 +95,7 @@ namespace WerewolfClient
             // BtnSignIn
             // 
             this.BtnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSignIn.Location = new System.Drawing.Point(331, 303);
-
+            this.BtnSignIn.Location = new System.Drawing.Point(749, 463);
             this.BtnSignIn.Margin = new System.Windows.Forms.Padding(4);
             this.BtnSignIn.Name = "BtnSignIn";
             this.BtnSignIn.Size = new System.Drawing.Size(125, 55);
@@ -110,25 +104,11 @@ namespace WerewolfClient
             this.BtnSignIn.UseVisualStyleBackColor = true;
             this.BtnSignIn.Click += new System.EventHandler(this.BtnSignIn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-
-            this.pictureBox1.Location = new System.Drawing.Point(232, 15);
-
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 114);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 145);
-
+            this.label3.Location = new System.Drawing.Point(421, 305);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 29);
@@ -138,20 +118,19 @@ namespace WerewolfClient
             // TBServer
             // 
             this.TBServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBServer.Location = new System.Drawing.Point(176, 142);
-
+            this.TBServer.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TBServer.Location = new System.Drawing.Point(594, 302);
             this.TBServer.Margin = new System.Windows.Forms.Padding(4);
             this.TBServer.Name = "TBServer";
             this.TBServer.Size = new System.Drawing.Size(363, 34);
             this.TBServer.TabIndex = 8;
-
             this.TBServer.Text = "http://project-ile.net:2344/werewolf";
             this.TBServer.TextChanged += new System.EventHandler(this.TBServer_TextChanged);
             this.TBServer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             // 
             // sound
             // 
-            this.sound.Location = new System.Drawing.Point(50, 323);
+            this.sound.Location = new System.Drawing.Point(468, 483);
             this.sound.Name = "sound";
             this.sound.Size = new System.Drawing.Size(75, 23);
             this.sound.TabIndex = 9;
@@ -159,40 +138,45 @@ namespace WerewolfClient
             this.sound.UseVisualStyleBackColor = true;
             this.sound.Click += new System.EventHandler(this.sound_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(497, 17);
+            this.button1.Location = new System.Drawing.Point(915, 177);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 28);
             this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
+            this.button1.Text = "exit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-
             // 
             // BtnSignup
             // 
-            this.BtnSignup.Location = new System.Drawing.Point(176, 303);
+            this.BtnSignup.Location = new System.Drawing.Point(594, 463);
             this.BtnSignup.Name = "BtnSignup";
             this.BtnSignup.Size = new System.Drawing.Size(124, 54);
             this.BtnSignup.TabIndex = 11;
             this.BtnSignup.Text = "Sign up";
             this.BtnSignup.UseVisualStyleBackColor = true;
             this.BtnSignup.Click += new System.EventHandler(this.Register_Click);
-
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(650, 175);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 114);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.VisibleChanged += new System.EventHandler(this.Login_Load_1);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 404);
-
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1701, 808);
             this.Controls.Add(this.BtnSignup);
-
             this.Controls.Add(this.button1);
             this.Controls.Add(this.sound);
             this.Controls.Add(this.TBServer);
@@ -203,12 +187,18 @@ namespace WerewolfClient
             this.Controls.Add(this.TbLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.TransparencyKey = System.Drawing.Color.HotPink;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Login_Load_1);
+            this.VisibleChanged += new System.EventHandler(this.Login_Load_1);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -227,7 +217,6 @@ namespace WerewolfClient
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TBServer;
         private System.Windows.Forms.Button sound;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
 
         private System.Windows.Forms.Button BtnSignup;

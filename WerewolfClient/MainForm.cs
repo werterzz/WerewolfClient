@@ -249,13 +249,11 @@ namespace WerewolfClient
 
 
                     case EventEnum.SwitchToDayTime:
-                        timer2.Start();
                         AddChatMessage("Switch to day time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Day;
                         LBPeriod.Text = "Day time of";
                         break;
                     case EventEnum.SwitchToNightTime:
-                        timer3.Start();
                         AddChatMessage("Switch to night time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Night;
                         LBPeriod.Text = "Night time of";
@@ -835,35 +833,9 @@ namespace WerewolfClient
 
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            if (this.Opacity > 0.0)
-            {
-                this.Opacity -= 0.1;
-            }
-            else
-            {
 
-                timer2.Stop();
 
-                //this.BackgroundImage = Properties.Resources.Daytime;
 
-            }
-        }
-
-        private void timer3_Tick(object sender, EventArgs e)
-        {
-            if (this.Opacity > 0.0)
-            {
-                this.Opacity -= 0.1;
-            }
-            else
-            {
-
-                timer3.Stop();
-                this.BackgroundImage = Properties.Resources.Nighttime;
-            }
-        }
 
         private void htp_click_Click(object sender, EventArgs e)
         {

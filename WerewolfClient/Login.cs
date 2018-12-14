@@ -15,9 +15,12 @@ namespace WerewolfClient
         private WerewolfController controller;
         private Form _mainForm;
         
+
         public Login(Form MainForm)
         {
             InitializeComponent();
+            
+            
             _mainForm = MainForm;
         }
 
@@ -111,7 +114,7 @@ namespace WerewolfClient
         }
         private void Login_Load_1(object sender, EventArgs e)
         {
-            WinApI.AnimateWindow(this.Handle, 2000, WinApI.BLEND);
+            WinApI.AnimateWindow(this.Handle, 1500, WinApI.BLEND);
 
         }
 
@@ -123,7 +126,6 @@ namespace WerewolfClient
             }
             else
             {
-                timer1.Stop();
                 Application.Exit();
             }
         }
@@ -137,7 +139,7 @@ namespace WerewolfClient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            Environment.Exit(0);
         }
 
       
