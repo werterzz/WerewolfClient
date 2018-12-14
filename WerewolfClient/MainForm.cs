@@ -845,7 +845,9 @@ namespace WerewolfClient
             {
 
                 timer2.Stop();
-                this.BackgroundImage = Properties.Resources.Daytime;
+
+                //this.BackgroundImage = Properties.Resources.Daytime;
+
             }
         }
 
