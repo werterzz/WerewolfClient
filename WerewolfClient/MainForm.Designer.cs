@@ -63,9 +63,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.BtnPlayer0 = new System.Windows.Forms.Button();
             this.GBChat = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.TbChatInput = new System.Windows.Forms.TextBox();
             this.TbChatBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.playerInGame = new System.Windows.Forms.Button();
             this.htp_click = new System.Windows.Forms.Button();
@@ -93,7 +93,6 @@
             // GBPlayers
             // 
             this.GBPlayers.BackColor = System.Drawing.Color.Transparent;
-            this.GBPlayers.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GBPlayers.BackgroundImage")));
             this.GBPlayers.Controls.Add(this.textBox15);
             this.GBPlayers.Controls.Add(this.textBox16);
             this.GBPlayers.Controls.Add(this.BtnPlayer14);
@@ -134,6 +133,7 @@
             this.GBPlayers.TabIndex = 0;
             this.GBPlayers.TabStop = false;
             this.GBPlayers.Text = "Players";
+            this.GBPlayers.Enter += new System.EventHandler(this.GBPlayers_Enter);
             // 
             // textBox15
             // 
@@ -151,6 +151,7 @@
             // 
             // BtnPlayer14
             // 
+            this.BtnPlayer14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer14.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer14.Image")));
             this.BtnPlayer14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer14.Location = new System.Drawing.Point(737, 485);
@@ -165,6 +166,7 @@
             // 
             // BtnPlayer3
             // 
+            this.BtnPlayer3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer3.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer3.Image")));
             this.BtnPlayer3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer3.Location = new System.Drawing.Point(864, 47);
@@ -179,6 +181,7 @@
             // 
             // BtnPlayer15
             // 
+            this.BtnPlayer15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer15.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer15.Image")));
             this.BtnPlayer15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer15.Location = new System.Drawing.Point(865, 485);
@@ -200,6 +203,7 @@
             // 
             // BtnPlayer2
             // 
+            this.BtnPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer2.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer2.Image")));
             this.BtnPlayer2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer2.Location = new System.Drawing.Point(737, 47);
@@ -221,6 +225,7 @@
             // 
             // BtnPlayer7
             // 
+            this.BtnPlayer7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer7.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer7.Image")));
             this.BtnPlayer7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer7.Location = new System.Drawing.Point(865, 193);
@@ -235,6 +240,7 @@
             // 
             // BtnPlayer6
             // 
+            this.BtnPlayer6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer6.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer6.Image")));
             this.BtnPlayer6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer6.Location = new System.Drawing.Point(737, 193);
@@ -263,6 +269,7 @@
             // 
             // BtnPlayer10
             // 
+            this.BtnPlayer10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer10.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer10.Image")));
             this.BtnPlayer10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer10.Location = new System.Drawing.Point(737, 338);
@@ -277,6 +284,7 @@
             // 
             // BtnPlayer11
             // 
+            this.BtnPlayer11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer11.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer11.Image")));
             this.BtnPlayer11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer11.Location = new System.Drawing.Point(865, 338);
@@ -312,6 +320,7 @@
             // 
             // BtnPlayer13
             // 
+            this.BtnPlayer13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer13.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer13.Image")));
             this.BtnPlayer13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer13.Location = new System.Drawing.Point(148, 491);
@@ -333,6 +342,7 @@
             // 
             // BtnPlayer12
             // 
+            this.BtnPlayer12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer12.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer12.Image")));
             this.BtnPlayer12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer12.Location = new System.Drawing.Point(20, 491);
@@ -354,6 +364,7 @@
             // 
             // BtnPlayer9
             // 
+            this.BtnPlayer9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer9.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer9.Image")));
             this.BtnPlayer9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer9.Location = new System.Drawing.Point(148, 344);
@@ -375,6 +386,7 @@
             // 
             // BtnPlayer8
             // 
+            this.BtnPlayer8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer8.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer8.Image")));
             this.BtnPlayer8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer8.Location = new System.Drawing.Point(20, 344);
@@ -396,6 +408,7 @@
             // 
             // BtnPlayer5
             // 
+            this.BtnPlayer5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer5.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer5.Image")));
             this.BtnPlayer5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer5.Location = new System.Drawing.Point(148, 200);
@@ -417,6 +430,7 @@
             // 
             // BtnPlayer4
             // 
+            this.BtnPlayer4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer4.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer4.Image")));
             this.BtnPlayer4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer4.Location = new System.Drawing.Point(20, 200);
@@ -438,6 +452,7 @@
             // 
             // BtnPlayer1
             // 
+            this.BtnPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer1.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer1.Image")));
             this.BtnPlayer1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer1.Location = new System.Drawing.Point(148, 53);
@@ -459,6 +474,7 @@
             // 
             // BtnPlayer0
             // 
+            this.BtnPlayer0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlayer0.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer0.Image")));
             this.BtnPlayer0.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer0.Location = new System.Drawing.Point(20, 53);
@@ -473,10 +489,8 @@
             // 
             // GBChat
             // 
-
             this.GBChat.BackColor = System.Drawing.Color.Transparent;
-            this.GBChat.Controls.Add(this.button1);
-
+            this.GBChat.BackgroundImage = global::WerewolfClient.Properties.Resources.Daytime;
             this.GBChat.Controls.Add(this.TbChatInput);
             this.GBChat.Controls.Add(this.TbChatBox);
             this.GBChat.Location = new System.Drawing.Point(317, 15);
@@ -487,17 +501,6 @@
             this.GBChat.TabIndex = 2;
             this.GBChat.TabStop = false;
             this.GBChat.Text = "Chat";
-            // 
-
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1088, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "voice";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonVoice_Click);
             // 
             // TbChatInput
             // 
@@ -520,6 +523,16 @@
             this.TbChatBox.Size = new System.Drawing.Size(348, 217);
             this.TbChatBox.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1088, 254);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "voice";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonVoice_Click);
+            // 
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
@@ -541,11 +554,9 @@
             // 
             // htp_click
             // 
-
             this.htp_click.Location = new System.Drawing.Point(317, 583);
             this.htp_click.Name = "htp_click";
             this.htp_click.Size = new System.Drawing.Size(192, 55);
-
             this.htp_click.TabIndex = 9;
             this.htp_click.Text = "how to play";
             this.htp_click.UseVisualStyleBackColor = true;
@@ -554,11 +565,9 @@
             // 
             // Leave
             // 
-
             this.Leave.Location = new System.Drawing.Point(317, 535);
             this.Leave.Name = "Leave";
             this.Leave.Size = new System.Drawing.Size(96, 42);
-
             this.Leave.TabIndex = 6;
             this.Leave.Text = "Leave Game";
             this.Leave.UseVisualStyleBackColor = true;
@@ -567,11 +576,9 @@
             // 
             // button3
             // 
-
             this.button3.Location = new System.Drawing.Point(511, 583);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(213, 55);
-
             this.button3.TabIndex = 5;
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = true;
@@ -580,11 +587,9 @@
             // 
             // button2
             // 
-
             this.button2.Location = new System.Drawing.Point(419, 535);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 42);
-
             this.button2.TabIndex = 4;
             this.button2.Text = "Sign Out";
             this.button2.UseVisualStyleBackColor = true;
@@ -593,6 +598,7 @@
             // 
             // GBAction
             // 
+            this.GBAction.BackColor = System.Drawing.Color.Transparent;
             this.GBAction.Controls.Add(this.BtnJoin);
             this.GBAction.Controls.Add(this.BtnAction);
             this.GBAction.Controls.Add(this.BtnVote);
@@ -640,6 +646,7 @@
             // 
             // GBStatus
             // 
+            this.GBStatus.BackColor = System.Drawing.Color.Transparent;
             this.GBStatus.Controls.Add(this.axWindowsMediaPlayer1);
             this.GBStatus.Controls.Add(this.LBTime);
             this.GBStatus.Controls.Add(this.LBDay);
@@ -729,10 +736,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::WerewolfClient.Properties.Resources.Daytime;
             this.ClientSize = new System.Drawing.Size(1035, 666);
-
             this.Controls.Add(this.playerInGame);
             this.Controls.Add(this.menu_click);
             this.Controls.Add(this.htp_click);

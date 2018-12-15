@@ -96,7 +96,14 @@ namespace WerewolfClient
                     
                 {
                     // FIXME, need to optimize this
+                    
                     Image img = Properties.Resources.Icon_villager;
+                    if(player.Status != Player.StatusEnum.Alive)
+                    {
+                        img = Properties.Resources.Dead;
+                        ((Button)Controls["GBPlayers"].Controls["BtnPlayer" + i]).Image = img;
+                        continue;
+                    }
                     string role;
                     if (player.Name == wm.Player.Name)
                     {
@@ -187,8 +194,8 @@ namespace WerewolfClient
                     case EventEnum.GameStopped:
                         AddChatMessage("Game is finished, outcome is " + wm.EventPayloads["Game.Outcome"]);
                         _updateTimer.Enabled = false;
-                        BtnJoin.Visible = true;
-                        EnableButton(BtnJoin, true);
+                        BtnJoin.Visible = false;
+                        EnableButton(BtnJoin, false);
 
                         break;
                     case EventEnum.GameStarted:
@@ -929,5 +936,9 @@ namespace WerewolfClient
 
         }
 
+        private void GBPlayers_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

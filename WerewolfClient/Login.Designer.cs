@@ -43,88 +43,101 @@ namespace WerewolfClient
             this.button1 = new System.Windows.Forms.Button();
             this.BtnSignup = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(510, 354);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Retro Computer", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(573, 482);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 29);
+            this.label1.Size = new System.Drawing.Size(114, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Login";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(463, 406);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Retro Computer", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(513, 544);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 29);
+            this.label2.Size = new System.Drawing.Size(174, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
             // TbLogin
             // 
-            this.TbLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbLogin.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.TbLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TbLogin.Font = new System.Drawing.Font("Retro Computer", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbLogin.ForeColor = System.Drawing.SystemColors.WindowText;
             this.TbLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TbLogin.Location = new System.Drawing.Point(594, 354);
+            this.TbLogin.Location = new System.Drawing.Point(704, 479);
             this.TbLogin.Margin = new System.Windows.Forms.Padding(4);
             this.TbLogin.Name = "TbLogin";
-            this.TbLogin.Size = new System.Drawing.Size(363, 34);
+            this.TbLogin.Size = new System.Drawing.Size(675, 30);
             this.TbLogin.TabIndex = 2;
             this.TbLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             // 
             // TbPassword
             // 
-            this.TbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbPassword.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.TbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TbPassword.Font = new System.Drawing.Font("Retro Computer", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TbPassword.Location = new System.Drawing.Point(594, 406);
+            this.TbPassword.Location = new System.Drawing.Point(704, 543);
             this.TbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.PasswordChar = '*';
-            this.TbPassword.Size = new System.Drawing.Size(363, 34);
+            this.TbPassword.Size = new System.Drawing.Size(675, 30);
             this.TbPassword.TabIndex = 3;
             this.TbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             // 
             // BtnSignIn
             // 
-            this.BtnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSignIn.Location = new System.Drawing.Point(749, 463);
+            this.BtnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.BtnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSignIn.Font = new System.Drawing.Font("Retro Computer", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSignIn.ForeColor = System.Drawing.Color.White;
+            this.BtnSignIn.Location = new System.Drawing.Point(946, 627);
             this.BtnSignIn.Margin = new System.Windows.Forms.Padding(4);
             this.BtnSignIn.Name = "BtnSignIn";
-            this.BtnSignIn.Size = new System.Drawing.Size(125, 55);
+            this.BtnSignIn.Size = new System.Drawing.Size(171, 83);
             this.BtnSignIn.TabIndex = 4;
             this.BtnSignIn.Text = "Sign In";
-            this.BtnSignIn.UseVisualStyleBackColor = true;
+            this.BtnSignIn.UseVisualStyleBackColor = false;
             this.BtnSignIn.Click += new System.EventHandler(this.BtnSignIn_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(421, 305);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Retro Computer", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(474, 417);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 29);
+            this.label3.Size = new System.Drawing.Size(222, 31);
             this.label3.TabIndex = 7;
             this.label3.Text = "API Address";
             // 
             // TBServer
             // 
-            this.TBServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBServer.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.TBServer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TBServer.Font = new System.Drawing.Font("Retro Computer", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBServer.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TBServer.Location = new System.Drawing.Point(594, 302);
+            this.TBServer.Location = new System.Drawing.Point(704, 417);
             this.TBServer.Margin = new System.Windows.Forms.Padding(4);
             this.TBServer.Name = "TBServer";
-            this.TBServer.Size = new System.Drawing.Size(363, 34);
+            this.TBServer.Size = new System.Drawing.Size(675, 30);
             this.TBServer.TabIndex = 8;
             this.TBServer.Text = "http://project-ile.net:2344/werewolf";
             this.TBServer.TextChanged += new System.EventHandler(this.TBServer_TextChanged);
@@ -133,87 +146,116 @@ namespace WerewolfClient
             // sound
             // 
             this.sound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sound.Location = new System.Drawing.Point(6, 3);
+            this.sound.BackColor = System.Drawing.Color.Chocolate;
+            this.sound.FlatAppearance.BorderSize = 0;
+            this.sound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sound.Font = new System.Drawing.Font("Retro Computer", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sound.ForeColor = System.Drawing.Color.Transparent;
+            this.sound.Location = new System.Drawing.Point(1802, 12);
             this.sound.Name = "sound";
-            this.sound.Size = new System.Drawing.Size(88, 34);
-            this.sound.TabIndex = 9;
-            this.sound.Text = "sound";
-            this.sound.UseVisualStyleBackColor = true;
+            this.sound.Size = new System.Drawing.Size(50, 50);
+            this.sound.TabIndex = 10;
+            this.sound.Text = "S";
+            this.sound.UseVisualStyleBackColor = false;
             this.sound.Click += new System.EventHandler(this.sound_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(100, 3);
+            this.button1.BackColor = System.Drawing.Color.Chocolate;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Retro Computer", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(1858, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 34);
+            this.button1.Size = new System.Drawing.Size(50, 50);
             this.button1.TabIndex = 10;
-            this.button1.Text = "exit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BtnSignup
             // 
-            this.BtnSignup.Location = new System.Drawing.Point(594, 463);
+            this.BtnSignup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.BtnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSignup.Font = new System.Drawing.Font("Retro Computer", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSignup.ForeColor = System.Drawing.Color.White;
+            this.BtnSignup.Location = new System.Drawing.Point(946, 764);
             this.BtnSignup.Name = "BtnSignup";
-            this.BtnSignup.Size = new System.Drawing.Size(124, 54);
+            this.BtnSignup.Size = new System.Drawing.Size(171, 83);
             this.BtnSignup.TabIndex = 11;
             this.BtnSignup.Text = "Sign up";
-            this.BtnSignup.UseVisualStyleBackColor = true;
+            this.BtnSignup.UseVisualStyleBackColor = false;
             this.BtnSignup.Click += new System.EventHandler(this.Register_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(749, 212);
+            this.pictureBox1.Location = new System.Drawing.Point(1378, 146);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 53);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(159, 148);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.VisibleChanged += new System.EventHandler(this.Login_Load_1);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // flowLayoutPanel1
+            // panel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.sound);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1521, 12);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(168, 41);
-            this.flowLayoutPanel1.TabIndex = 12;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
+            this.panel1.Controls.Add(this.sound);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.Beige;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1920, 79);
+            this.panel1.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Retro Computer", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(741, 159);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(613, 108);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "WereWolf";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1701, 808);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnSignup);
             this.Controls.Add(this.TBServer);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnSignIn);
             this.Controls.Add(this.TbPassword);
             this.Controls.Add(this.TbLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Login";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.TransparencyKey = System.Drawing.Color.HotPink;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Login_Load_1);
             this.VisibleChanged += new System.EventHandler(this.Login_Load_1);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +275,8 @@ namespace WerewolfClient
         private System.Windows.Forms.Button button1;
 
         private System.Windows.Forms.Button BtnSignup;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
     }
     partial class WinApI
     {

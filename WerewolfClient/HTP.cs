@@ -230,6 +230,11 @@ namespace WerewolfClient
         {
             button17.Visible = false;
         }
+
+        private void Jailer_btn_Click(object sender, EventArgs e)
+        {
+
+        }
         //
 
     }
