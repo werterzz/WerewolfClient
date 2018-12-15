@@ -132,7 +132,7 @@ namespace WerewolfClient
                             img = Properties.Resources.Icon_doctor;
                             break;
                         case WerewolfModel.ROLE_WEREWOLF:
-                            img = Properties.Resources.Icon_monkey;
+                            img = Properties.Resources.Icon_werewolf;
                             break;
                         case WerewolfModel.ROLE_WEREWOLF_SEER:
                             img = Properties.Resources.Icon_wolf_seer;
